@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login - Good Luck Publishers</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <style>
+  .hidden{
+  display:none;
+  }
+  /* From cssbuttons.io */
+.c-button {
+ color: #000;
+ font-weight: 700;
+ font-size: 16px;
+ text-decoration: none;
+ padding: 0.9em 3em;
+ cursor: pointer;
+ display: inline-block;
+ vertical-align: middle;
+ position: relative;
+ z-index: 1;
+}
+
+.c-button--gooey {
+ color: #06c8d9;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ border: 4px solid #06c8d9;
+ border-radius: 0;
+ position: relative;
+ transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs {
+ height: 100%;
+ filter: url(#goo);
+ overflow: hidden;
+ position: absolute;
+ top: 0;
+ left: 0;
+ bottom: -3px;
+ right: -1px;
+ z-index: -1;
+}
+
+.c-button--gooey .c-button__blobs div {
+ background-color: #06c8d9;
+ width: 34%;
+ height: 100%;
+ border-radius: 100%;
+ position: absolute;
+ transform: scale(1.4) translateY(125%) translateZ(0);
+ transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+ left: -5%;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+ left: 30%;
+ transition-delay: 60ms;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+ left: 66%;
+ transition-delay: 25ms;
+}
+
+.c-button--gooey:hover {
+ color: #fff;
+}
+
+.c-button--gooey:hover .c-button__blobs div {
+ transform: scale(1.4) translateY(0) translateZ(0);
+}
+li{
+	font-size:24px; 
+	color:#06C8D9;
+}
+li a{
+	color:#06C8D9;
+}
+  </style>
+</head>
+<body>
+<svg style="display: block; height: 0; width: 0;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+				  <defs>
+					<filter id="goo">
+					  <feGaussianBlur result="blur" stdDeviation="10" in="SourceGraphic"></feGaussianBlur>
+					  <feColorMatrix result="goo" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" mode="matrix" in="blur"></feColorMatrix>
+					  <feBlend in2="goo" in="SourceGraphic"></feBlend>
+					</filter>
+				  </defs>
+				</svg>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 login-section-wrapper">
+			<center>
+				<img src="images/logog.png" style="width:70%; margin:30px 0px;"><br><br>
+			</center>
+			<div class="row">
+				<div class="col-sm-6">
+					<center>
+					<button class="c-button c-button--gooey" onclick="go(1)"> Class 1
+					  <div class="c-button__blobs">
+					  <div></div>
+					  <div></div>
+					  <div></div>
+					  </div>
+					</button>
+					</center>
+				</div>
+				<div class="col-sm-6">
+					<center>
+					<button class="c-button c-button--gooey" onclick="go(2)"> Class 2
+					  <div class="c-button__blobs">
+					  <div></div>
+					  <div></div>
+					  <div></div>
+					  </div>
+					</button>
+					</center>
+				</div>
+				<div class="col-sm-12 class1 hidden">
+					<h2 style="margin-top:50px;">Class 1</h2><br>
+					<ol>
+						<li><a href="class-1/Pati and Pip/index.html">Pati and Pip</a></li>
+						<li><a href="class-1/We Share a Room/index.html">We Share a Room</a></li>
+						<li><a href="class-1/Oh My! Look at the Sky/index.html">Oh My! Look at the Sky</a></li>
+						<li><a href="class-1/Jumbo and Monti/index.html">Jumbo and Monti</a></li>
+						<li><a href="class-1/Class I is Going on a Picnic/index.html">Class I is Going on a Picnic</a></li>
+						<li><a href="class-1/Mr Slow, the Tortoise and Speedy, the Hare/index.html">Mr Slow, the Tortoise and Speedy, the Hare</a></li>
+					</ol>
+				</div>
+				<div class="col-sm-12 class2 hidden">
+					<h2 style="margin-top:50px;">Class 2</h2><br>
+					<ol>
+						<li><a href="class-1/Pati and Pip/index.html">Pati and Pip</a></li>
+						<li><a href="class-1/We Share a Room/index.html">We Share a Room</a></li>
+						<li><a href="class-1/Oh My! Look at the Sky/index.html">Oh My! Look at the Sky</a></li>
+						<li><a href="class-1/Jumbo and Monti/index.html">Jumbo and Monti</a></li>
+						<li><a href="class-1/Class I is Going on a Picnic/index.html">Class I is Going on a Picnic</a></li>
+						<li><a href="class-1/Mr Slow, the Tortoise and Speedy, the Hare/index.html">Mr Slow, the Tortoise and Speedy, the Hare</a></li>
+					</ol>
+				</div>
+				
+			</div>
+        </div>
+        <div class="col-sm-6 px-0 d-none d-sm-block">
+          <img src="assets/images/login2.jpg" alt="login image" class="login-img">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script>
+	function go(a){
+		if(a==1){
+			$('.class1').removeClass('hidden');
+			$('.class2').addClass('hidden');
+		}else{
+			$('.class2').removeClass('hidden');
+			$('.class1').addClass('hidden');
+		}
+	}
+  </script>
+</body>
+</html>
