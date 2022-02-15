@@ -11,26 +11,24 @@
 <style>
 
 body{
-background-image:url('../../../img/yellow.jpg');
-background-attachment:fixed;
+	background-image:url('../../../img/yellow.jpg');
+	background-attachment:fixed;
 }
- 
-h2{
-text-align:center;
-background-color: #ffffff8f;
-font-family:roboto ;
+.container{
+	background:#ffffff8f;
+	border:5px solid white;
+	border-radius:20px;
+	padding:20px;
 }
-h3{
-text-align:center;
-font-family:roboto ;
-background-color:#ffffff8f;
-}
-select{
-margin-top:10px;
+h2, h3{
+	text-align:center;
+	background-color: #ffffff8f;
+	font-family:roboto ;
+	padding:10px;
 }
 img{
-width:100%;
-height:auto;
+	width:100%;
+	height:auto;
 }
 .block {
     display: block;
@@ -45,7 +43,7 @@ height:auto;
     text-align: center;
 }
 .hidden{
-display:none;
+	display:none;
 }
 .button {
     position: relative;
@@ -86,10 +84,8 @@ display:none;
 
 }
 #dim{
-margin-top:10px;
-font-family:Comic Sans, Comic Sans MS, cursive;
-font-size:20px;
-
+	margin-top:10px;
+	font-size:20px;
 }
 @media only screen and (max-device-width: 480px) {
       img{
@@ -111,9 +107,9 @@ font-size:20px;
 	  }
     }
 
- @media only screen and (min-device-width: 481px) {
-       
-    }
+@media only screen and (min-device-width: 481px) {
+   
+}
 </style>
   
   </head>
@@ -126,68 +122,54 @@ font-size:20px;
 
 <div class="container">
 	<div class="row" id="dim">
-	
-	<div class="col-sm-10"  >
-	1.&nbsp; The basket is <span id="mon1" onclick="mon1()">under</span>/<span id="happy1" onclick="happy1()">in</span> the table. <hr class="dashed">
+		<div class="col-sm-10"  >
+			1.&nbsp; The basket is <span id="1" onclick="correct(this.id)">under</span>/<span id="11" onclick="wrong(this.id)">in</span> the table. <hr class="dashed">
+		</div>
 	</div>
-	</div>
-	
 	<div class="row" id="dim" >
-	
-	<div class="col-sm-10"  >
-	2.&nbsp; We keep clothes <span id="mon2" onclick="mon2()">in</span>/<span id="happy2" onclick="happy2()">behind</span> the cupboard. <hr class="dashed">
-	</div>
-	</div>
-	<div class="row" id="dim"  >
-	
-	<div class="col-sm-10"  >
-	3.&nbsp; The boy hid <span id="happy3" onclick="happy3()">in</span>/<span id="mon3" onclick="mon3()" >behind</span> the sofa. <hr class="dashed">
-	</div>
+		<div class="col-sm-10"  >
+			2.&nbsp; We keep clothes <span id="2" onclick="correct(this.id)">in</span>/<span id="12" onclick="wrong(this.id)">behind</span> the cupboard. <hr class="dashed">
+		</div>
 	</div>
 	<div class="row" id="dim"  >
-	
-	<div class="col-sm-10"  >
-	4.&nbsp; Come and sit <span id="happy4" onclick="happy4()" >on</span>/<span id="mon4" onclick="mon4()" >near</span> me.<hr class="dashed">
-	
+		<div class="col-sm-10"  >
+			3.&nbsp; The boy hid <span id="13" onclick="wrong(this.id)">in</span>/<span id="3" onclick="correct(this.id)" >behind</span> the sofa. <hr class="dashed">
+		</div>
 	</div>
-	</div>
-	
-	<div class="row" id="dim"  >
-	
-	<div class="col-sm-10"  >
-	5.&nbsp; The cat is sitting <span id="mon5" onclick="mon5()">on</span>/<span id="happy5" onclick="happy5()">in</span> the mat.  <hr class="dashed">
-	
-	</div>
-	</div>
-	
-	<div class="row" id="dim"  >
-	
-	<div class="col-sm-10"  >
-	6.&nbsp; There is some water <span id="mon6" onclick="mon6()">in</span>/<span id="happy6" onclick="happy6()">on</span> this jug.  <hr class="dashed">
-	
-	</div>
+	<div class="row" id="dim">
+		<div class="col-sm-10"  >
+			4.&nbsp; Come and sit <span id="14" onclick="wrong(this.id)" >on</span>/<span id="4" onclick="correct(this.id)" >near</span> me.<hr class="dashed">
+		</div>
 	</div>
 	<div class="row" id="dim"  >
-	
-	<div class="col-sm-10"  >
-	7.&nbsp; Susan dropped the pencil, and found it <span id="happy7" onclick="happy7()">on</span>/<span id="mon7" onclick="mon7()" >under</span> the table. <hr class="dashed">
+		<div class="col-sm-10"  >
+			5.&nbsp; The cat is sitting <span id="5" onclick="correct(this.id)">on</span>/<span id="15" onclick="wrong(this.id)">in</span> the mat.  <hr class="dashed">
+		</div>
 	</div>
+	<div class="row" id="dim"  >
+		<div class="col-sm-10"  >
+			6.&nbsp; There is some water <span id="6" onclick="correct(this.id)">in</span>/<span id="16" onclick="wrong(this.id)">on</span> this jug.  <hr class="dashed">
+		</div>
 	</div>
-	
+	<div class="row" id="dim"  >
+		<div class="col-sm-10"  >
+			7.&nbsp; Susan dropped the pencil, and found it <span id="17" onclick="wrong(this.id)">on</span>/<span id="7" onclick="correct(this.id)" >under</span> the table. <hr class="dashed">
+		</div>
+	</div>
 	<br>
 	
 	<div class="row" >
-	<div class="col-sm-4">
-	<button class="button"   onclick="ho()"><span>Reset </span></button>
-	</div>
-	
-	<div class="col-sm-4">
-	<button class="button" onclick="go()" ><span>Submit </span></button>
-	</div>
+		<div class="col-sm-4">
+			<button class="button" onclick="location.reload()"><span>Reset </span></button>
+		</div>
+		
+		<div class="col-sm-4">
+			<button class="button" id="submit" onclick="go()" ><span>Submit </span></button>
+		</div>
 
-	<div class="col-sm-4">
-	<button class="button" onclick="show()"><span>Answer Key </span></button>
-	</div>
+		<div class="col-sm-4">
+			<button class="button" onclick="show()"><span>Answer Key </span></button>
+		</div>
 	</div>
 </div>
 </div>
@@ -200,99 +182,66 @@ font-size:20px;
 </div>
 <audio id="audio2" src="../../../english/try-again.mp3"></audio>
 <audio id="audio1" src="../../../english/well-done.mp3"></audio>
-
 
 <script>
 var count = 0;
-function ho() {
- 
-window.location="index.html"
+
+
+var C6A2_error = 0;
+var C6A2_score = 0;
+var C6A2_submit = 0;
+
+
+function correct(a){
+	w = parseInt(a)+10;
+	b = parseInt(a)+1;
+	$('#'+w).css('pointer-events','none');
+	$('#'+a).css('pointer-events','none');
+	$('#'+a).css('background-color','green');
+	$('#'+a).css('color','white');
+	C6A2_score++;
+	localStorage.setItem('C6A2_score', C6A2_score);
+	var audio = document.getElementById("audio1");
+	audio.play();
 }
-function mon1() {
-	$('#mon1').css("background-color", "green");
-	$('#mon1').css("color", "white");
-	count++;
-}
-function mon2() {
-	$('#mon2').css("background-color", "green");count++;
-	$('#mon2').css("color", "white");
-}
-function mon3() {
-	$('#mon3').css("background-color", "green");count++;
-	$('#mon3').css("color", "white");
-}
-function mon4() {
-	$('#mon4').css("background-color", "green");count++;
-	$('#mon4').css("color", "white");
-}
-function mon5() {
-	$('#mon5').css("background-color", "green");count++;
-	$('#mon5').css("color", "white");
-}
-function mon6() {
-	$('#mon6').css("background-color", "green");count++;
-	$('#mon6').css("color", "white");
-}
-function mon7() {
-	$('#mon7').css("background-color", "green");count++;
-	$('#mon7').css("color", "white");
-}
-function happy1() {
-	$('#happy1').css("background-color", "red");
-}
-function happy2() {
-	$('#happy2').css("background-color", "red");
-}
-function happy3() {
-	$('#happy3').css("background-color", "red");
-}
-function happy4() {
-	$('#happy4').css("background-color", "red");
-}
-function happy5() {
-	$('#happy5').css("background-color", "red");
-}
-function happy6() {
-	$('#happy6').css("background-color", "red");
-}
-function happy7() {
-	$('#happy7').css("background-color", "red");
-}
-function show() {
-$('#mon1').css("background-color", "green");
-$('#mon1').css("color", "white");
-$('#mon2').css("background-color", "green");
-$('#mon2').css("color", "white");
-$('#mon3').css("background-color", "green");
-$('#mon3').css("color", "white");
-$('#mon4').css("background-color", "green");
-$('#mon4').css("color", "white");
-$('#mon5').css("background-color", "green");
-$('#mon5').css("color", "white");
-$('#mon6').css("background-color", "green");
-$('#mon6').css("color", "white");
-$('#mon7').css("background-color", "green");
-$('#mon7').css("color", "white");
-$('#happy1').css("background-color", "red");
-$('#happy2').css("background-color", "red");
-$('#happy3').css("background-color", "red");
-$('#happy4').css("background-color", "red");
-$('#happy5').css("background-color", "red");
-$('#happy6').css("background-color", "red");
-$('#happy7').css("background-color", "red");
+
+function wrong(a){
+	$('#'+a).css('pointer-events','none');
+	$('#'+a).css('background-color','red');
+	$('#'+a).css('color','white');
+	C6A2_error++;
+	localStorage.setItem('C6A2_error', C6A2_error);
+	var audio = document.getElementById("audio2");
+	audio.play();
 }
 function go() {
-if(count>=7){
- $('.tab1').addClass('hidden')
-	   $('.tab4').removeClass('hidden')
-	   var audio = document.getElementById("audio1");
-       audio.play();
+	if(C6A2_score==7){
+		$('.tab1').addClass('hidden')
+		$('.tab4').removeClass('hidden')
+		var audio = document.getElementById("audio1");
+		audio.play();
+		C6A2_submit++;
+		localStorage.setItem('C6A2_submit', C6A2_submit);
+	}
+	else{
+		var audio = document.getElementById("audio2");
+		audio.play();
+	}
 }
-else{
-var audio = document.getElementById("audio2");
-       audio.play();
+
+function show(){
+	$('#submit').css('pointer-events','none');
+	a=1;
+	while(a<8){
+		w = parseInt(a)+10;
+		$('#'+w).css('pointer-events','none');
+		$('#'+a).css('pointer-events','none');
+		$('#'+a).css('background-color','green');
+		$('#'+a).css('color','white');
+		a++;
+	}
 }
-}
+
 
 </script>
 

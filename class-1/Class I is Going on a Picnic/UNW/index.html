@@ -11,19 +11,24 @@
 <style>
 
 body{
-background-image:url('../../../img/yellow.jpg');
-background-attachment:fixed;
+	background-image:url('../../../img/yellow.jpg');
+	background-attachment:fixed;
 }
- 
 h2{
-text-align:center;
-background-color:#ffffff8f;
-font-family:Dimbo; 
-padding-bottom:10px;
-padding-top:10px;
+	text-align:center;
+	background-color:#ffffff8f;
+	font-family:Dimbo; 
+	padding-bottom:10px;
+	padding-top:10px;
+}
+.container{
+	background:#ffffff8f;
+	border:5px solid #ffffff;
+	padding:30px;
+	border-radius:20px;
 }
 select{
-margin-top:10px;
+	margin-top:10px;
 }
 .block {
     display: block;
@@ -37,13 +42,13 @@ margin-top:10px;
     text-align: center;
 }
 .hidden{
-display:none;
+	display:none;
 }
 .button {
     position: relative;
     background-color: #f4511e;
     border: none;
-	margin-top: 40px;
+	margin-top: 30px;
 	margin-left: 45px;
     font-size: 25px;
 	font-family:CAC Moose, cursive;
@@ -56,135 +61,69 @@ display:none;
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
-}
-
-.button:after {
-    content: "";
-    background: #90EE90;
-    display: block;
-    position: absolute;
-	color:#FFFF00;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px!important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-}
-
-.button:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
-
+	box-shadow:2px 2px 2px #ff8000;
 }
 #dim{
-margin-top:10px;
-font-family:Roboto Medium;
-font-size:25px;
+	margin-top:10px;
+	font-family:Roboto Medium;
+	font-size:25px;
 }
 
 
-#bac{
-color:#FF0000; 
-font-weight:bold; 
-font-family:ZapfDingbats BT;
- text-shadow: 2px 2px #000; 
-}
-
-
-
-
-@media only screen and (max-device-width: 480px) {
-      img{
-	  height:auto;
-	  width:100%;
-	  margin-top:50px;
-	  }
-	  #dim{
-	  padding:0px;
-	  text-align:left;
-	  width:100%;
-	  font-size:24px;
-	   margin-top:40px;
-	   font-size:20px;
-	   
-	  }
-	  h2{
-	  margin-top:50px;
-	  }
-    }
-
- @media only screen and (min-device-width: 481px) {
-       
-    }
 </style>
   
   </head>
 <body>
 
-<div class="tab1">
+<div class="main">
 <h2>Use New Words</h2>
-<h2 style="margin-top: 20px; margin-bottom: -30px; font-size: 30px; ">Choose the correct words from the box into the blanks and complete the sentences.</h2>
+<h2>Choose the correct words from the box into the blanks and complete the sentences.</h2>
 <br>
-<br>
-<br>
-<div class="container" style ="margin-top:-20px";>		
-	<div class="row" id="dim">
-	<div class="col-sm-12">
-	1.&nbsp; &nbsp;The  <select id="1"><option selected disabled>     </option><option>flowers</option><option>ice cream cones</option><option>trees</option><option>umbrellas</option><option>children</option>
-	</select>&nbsp;&nbsp; are playing in the park. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  children</span><span id="bac" class="burp1 hidden">&nbsp; &nbsp; </span><hr class="dashed">
-	
+<div class="container" >		
+	<div class="row" id="dim" >
+		<div class="col-sm-12">
+		1.&nbsp; &nbsp;The  <select id="tab0"></select>&nbsp;&nbsp; are playing in the park. <hr class="dashed">
+		
+		</div>
 	</div>
+	<div class="row" id="dim" >
+		<div class="col-sm-12">
+		2.&nbsp; &nbsp;The  <select id="tab1"></select>&nbsp;&nbsp;are very pretty. <hr class="dashed">
+		
+		</div>
 	</div>
-	<div class="row" id="dim" style ="margin-top:-10px"; >
-	<div class="col-sm-12">
-	2.&nbsp; &nbsp;The  <select id="2"><option selected disabled>     </option><option>flowers</option><option>ice cream cones</option><option>trees</option><option>umbrellas</option><option>children</option>
-	</select>&nbsp;&nbsp;are very pretty. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  flowers</span><span id="bac" class="burp2 hidden">&nbsp; &nbsp; </span><hr class="dashed">
-	
+	<div class="row" id="dim" >
+		<div class="col-sm-12">
+		3.&nbsp; &nbsp;We see many <select id="tab2"></select>&nbsp;&nbsp;on a rainy day. <hr class="dashed">
+		
+		</div>
 	</div>
-	</div>
-	<div class="row" id="dim" style ="margin-top:-10px";  >
-	<div class="col-sm-12">
-	3.&nbsp; &nbsp;We see many <select id="3"><option selected disabled> </option><option>flowers</option><option>ice cream cones</option><option>trees</option><option>umbrellas</option><option>children</option>
-	</select>&nbsp;&nbsp;on a rainy day. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  umbrellas</span><span id="bac" class="burp3 hidden">&nbsp; &nbsp; </span><hr class="dashed">
-	
-	</div>
-	</div>
-	<div class="row" id="dim" style ="margin-top:-10px";  >
-	<div class="col-sm-12">
-	4.&nbsp; &nbsp;We like to eat&nbsp; <select id="4"><option selected disabled>     </option><option>flowers</option><option>ice cream cones</option><option>trees</option><option>umbrellas</option><option>children</option>
-	</select>&nbsp;&nbsp;. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  ice cream cones</span><span id="bac" class="burp4 hidden">&nbsp; &nbsp; </span><hr class="dashed">
-	
-	</div>
+	<div class="row" id="dim" >
+		<div class="col-sm-12">
+		4.&nbsp; &nbsp;We like to eat&nbsp; <select id="tab3"></select>&nbsp;&nbsp;. <hr class="dashed">
+		
+		</div>
 	</div>
 	
-	<div class="row" id="dim" style ="margin-top:-10px";  >
-	<div class="col-sm-12">
-	5.&nbsp; &nbsp;I see red apples on those&nbsp; <select id="5"><option selected disabled>     </option><option>flowers</option><option>ice cream cones</option><option>trees</option><option>umbrellas</option><option>children</option>
-	</select>&nbsp;&nbsp;. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  trees</span><span id="bac" class="burp5 hidden">&nbsp; &nbsp; </span><hr class="dashed">
-	
-	</div>
-	</div>
-	
-   	
-    
-    
-    
-	
-	<div class="row" style="margin-top:-10px;" >
-	<div class="col-sm-4">
-	<button class="button"   onclick="ho()"><span>Reset </span></button>
+	<div class="row" id="dim" >
+		<div class="col-sm-12">
+		5.&nbsp; &nbsp;I see red apples on those&nbsp; <select id="tab4"></select>&nbsp;&nbsp;. <hr class="dashed">
+		
+		</div>
 	</div>
 	
-	<div class="col-sm-4">
-	<button class="button" onClick="go()" ><span>Submit </span></button>
-	</div>
+	<div class="row"  >
+		<div class="col-sm-4">
+		<button class="button"   onclick="window.location.reload()"><span>Reset </span></button>
+		</div>
+		
+		<div class="col-sm-4">
+		<button class="button" onClick="check()" id="Submit"><span>Submit </span></button>
+		</div>
 
-	<div class="col-sm-4">
-	<button class="button" onClick="show()"><span>Answer Key </span></button>
-	</div>
+		<div class="col-sm-4">
+		<button class="button" onClick="solve()"id="sol"><span>Answer Key </span></button>
+		</div>
 	</div>
 </div>
 </div>
@@ -192,76 +131,94 @@ font-family:ZapfDingbats BT;
 <br>
 <br>
 
-<div class="tab4 hidden">
-<img  height="auto" width="100%" src="../../../english/Welldone.gif">
+<div class="well hidden">
+	<img  height="auto" width="100%" src="../../../english/Welldone.gif">
 </div>
 
 <audio id="audio2" src="../../../english/try-again.mp3"></audio>
 <audio id="audio1" src="../../../english/well-done.mp3"></audio>
 
 <script>
-function ho() {
- 
-window.location="index.html"
-}
-function show() {
- 
-	   $('.fog').removeClass('hidden')
-	   
 
-}
-function go() {
- var a1 = document.getElementById("1");
- var a2 = document.getElementById("2");
- var a3 = document.getElementById("3");
- var a4 = document.getElementById("4");
- var a5 = document.getElementById("5");
+const answers = ['children','flowers','umbrellas','ice cream cones','trees'];
 
- 
-
-var ans1 = a1.options[a1.selectedIndex].text;
-var ans2 = a2.options[a2.selectedIndex].text;
-var ans3= a3.options[a3.selectedIndex].text;
-var ans4= a4.options[a4.selectedIndex].text;
-var ans5= a5.options[a5.selectedIndex].text;
-
-
-if(ans1!="children"){
-$('.burp1').removeClass('hidden')
-}
-if(ans2!="flowers"){
-$('.burp2').removeClass('hidden')
-}
-if(ans3!="umbrellas"){
-$('.burp3').removeClass('hidden')
-}
-if(ans4!="ice cream cones"){
-$('.burp4').removeClass('hidden')
-}
-if(ans5!="trees"){
-$('.burp5').removeClass('hidden')
+window.onload = function(e){ 
+	$('select').append("<option selected disabled></option><option>flowers</option><option>children</option><option>trees</option><option>ice cream cones</option><option>umbrellas</option>");
+	$("#sol").css("pointer-events", "none");
 }
 
-
-
-
-
-
-if(ans1=="children" && ans2=="flowers" && ans3=="umbrellas" && ans4=="ice cream cones" && ans5=="trees"){
-
-var audio = document.getElementById("audio1");
-       audio.play();
-	   $('.tab1').addClass('hidden')
-	   $('.tab4').removeClass('hidden')
-}
-else{
-
-var audio = document.getElementById("audio2");
-       audio.play();
-}
+function solve() {
+	$('#submit').attr('disabled',true);
+	$("select").css("color","green");
+	$("select").css("border","1px solid green");
+	
+	let size = answers.length;
+	console.log(size);
+	var i=0;
+	while(i<size){
+		$('#tab'+i).val(answers[i]).change();
+		i++;
+		console.log(size);	
+	}
 }
 
-
+function check() {
+	var C5A4_error = 0;
+	var C5A4_score = 0;
+	var C5A4_submit = 0;
+	$('select').css('border','1px solid');
+	$("#sol").css("pointer-events", "auto");	
+	let size = answers.length;
+	var i=0;
+	var empty=0;	
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		console.log(input_answer);
+		if(input_answer=='' || input_answer==null){
+			empty++;
+		}
+		i++;
+	}
+	if(empty==size){
+		$("#sol").css("pointer-events", "none");
+	}
+	var i=0;
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer!=answers[i]){
+			$('#tab'+i).css("border",'2px solid red');
+			C5A4_error++;
+			localStorage.setItem('C5A4_error', C5A4_error);
+		}
+		i++;
+	}
+	
+	var i=0;
+	var correct=0;
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer==answers[i]){
+			correct++;
+			C5A4_score++;
+			localStorage.setItem('C5A4_score', C5A4_score);
+		}
+		i++;
+	}
+	if(correct==size){
+		setTimeout(function(){
+			C5A4_submit++;
+			localStorage.setItem('C5A4_submit', C5A4_submit);
+			var audio = document.getElementById("audio1");
+			audio.play();
+			$('.main').addClass('hidden');
+			$('.well').removeClass('hidden');
+		},1000);
+		
+	}else{
+		var audio = document.getElementById("audio2");
+		audio.play();
+	}
+}
 
 </script>
 

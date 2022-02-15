@@ -198,9 +198,13 @@ span{
 <script>
 	$(document).ready(function(){
 		localStorage.setItem('chapter', 'Pati and Pip');
+		localStorage.setItem('ch_no', '1');
+		localStorage.setItem('C1A1_total', 4);
+		localStorage.setItem('C1A2_total', 4);
+		localStorage.setItem('C1A3_total', 4);
+		localStorage.setItem('C1A4_total', 3);
 	});
 	function openModal(a,b){
-		console.log('hii');	
 		$('#exampleModalPreviewLabel').html(b);
 		$('#if').attr('src', a);
 		$('#exampleModalPreview').modal('show');

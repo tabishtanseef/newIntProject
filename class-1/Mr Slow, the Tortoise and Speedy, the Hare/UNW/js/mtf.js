@@ -12,6 +12,8 @@ function startAct() {
 }
 
 $(document).ready(function() {
+	
+	
     if (language_code['1'] == 1) {
         $('body').addClass("font");
         $('#notification_Msg_Print').addClass("font");
@@ -27,6 +29,9 @@ $(document).ready(function() {
     populateUI();
 
     $("#submitAns").click(function() {
+		var C6A4_error = 0;
+		var C6A4_score = 0;
+		var C6A4_submit = 0;
 		flag = 0;
         $("#btn-tryagain").removeAttr('disabled');
         
@@ -54,18 +59,12 @@ $(document).ready(function() {
         if (flag == 0) {
 			$("#feedback-box").html('<img src="img/correct_Img.gif" />').show();
 			playAudio('well-done.mp3');
+			C6A4_submit++;
+			localStorage.setItem('C6A4_submit', C6A4_submit);
 			setInterval(function(){
 			$('.wrapper').addClass('hidden');
 			$('.tab').removeClass('hidden');},2000);
             $("#btn-tryagain").attr('disabled', 'disabled');
-            /*$('#msgComp').delay(1000).animate({
-			left:'36%',
-			top:'36%',
-			width:'345px',
-			height:'200px'
-		});*/
-            //		alert();
-            //			$('#showAns').parent().hide();
         } else {
 			$("#feedback-box").html('<img src="img/incorrect_Img.gif" />').show();
             playAudio('try-again.mp3');
@@ -79,7 +78,7 @@ $(document).ready(function() {
 		
 		$('#submitAns').unbind('click');
 		$('#submitAns').removeAttr('disabled');*/
-
+		
         var status = 0;
         //this loop set a correct tick mark before each right answer
         $.each(tempJsonObj.Answer, function(j, value) {
@@ -87,18 +86,22 @@ $(document).ready(function() {
                 if ((lineDraw[i].lval.attr("id") + "_" + lineDraw[i].rval.attr("id")) == value) {
                     lineDraw[i].lval[0].parentElement.children[0].className = 'tick';
                     status++;
+					C6A4_score++;
+					localStorage.setItem('C6A4_score', C6A4_score);
                 }
             }
-
         });
         //this loop set a wrong tick mark before each wrong answer
         $.each(tempJsonObj.Answer, function(j, value) {
             for (i = 0; i < lineDraw.length; i++) {
-                if (((lineDraw[i].lval.attr("id") + "_" + lineDraw[i].rval.attr("id")) != value) && (lineDraw[i].lval[0].parentElement.children[0].className != 'tick'))
-                    lineDraw[i].lval[0].parentElement.children[0].className = 'wrong';
+                if (((lineDraw[i].lval.attr("id") + "_" + lineDraw[i].rval.attr("id")) != value) && (lineDraw[i].lval[0].parentElement.children[0].className != 'tick')){
+					lineDraw[i].lval[0].parentElement.children[0].className = 'wrong'; 
+					C6A4_error++;
+				}
             }
         });
-
+		C6A4_error = C6A4_error/5;
+		localStorage.setItem('C6A4_error', C6A4_error);
         if (status == 5) {
             $("#showAns").attr('disabled', 'disabled')
         } else {
@@ -463,6 +466,7 @@ function showLineBlocker() {
 function tryAgainAct() {
 
 	//$("#myblocker").hide();
+	
 	$('#mainWrapper').css('pointer-events','initial');
 	
 	for(var i=lineDraw.length-1; i>=0; i--) {

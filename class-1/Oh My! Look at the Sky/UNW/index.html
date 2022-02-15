@@ -11,19 +11,24 @@
 <style>
 
 body{
-background-image:url('../../../img/yellow.jpg');
-background-attachment:fixed;
+	background-image:url('../../../img/yellow.jpg');
+	background-attachment:fixed;
 }
- 
 h2{
-text-align:center;
-background-color:#ffffff8f;
-font-family:Dimbo; 
-padding-bottom:10px;
-padding-top:10px;
+	text-align:center;
+	background-color:#ffffff8f;
+	font-family:Dimbo; 
+	padding-bottom:10px;
+	padding-top:10px;
+}
+.container{
+	background:#ffffff8f;
+	border:5px solid #ffffff;
+	padding:30px;
+	border-radius:20px;
 }
 select{
-margin-top:10px;
+	margin-top:10px;
 }
 .block {
     display: block;
@@ -37,13 +42,13 @@ margin-top:10px;
     text-align: center;
 }
 .hidden{
-display:none;
+	display:none;
 }
 .button {
     position: relative;
     background-color: #f4511e;
     border: none;
-	margin-top: 40px;
+	margin-top: 30px;
 	margin-left: 45px;
     font-size: 25px;
 	font-family:CAC Moose, cursive;
@@ -56,8 +61,8 @@ display:none;
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
+	box-shadow:2px 2px 2px #ff8000;
 }
-
 .button:after {
     content: "";
     background: #90EE90;
@@ -71,113 +76,78 @@ display:none;
     opacity: 0;
     transition: all 0.8s
 }
-
 .button:active:after {
     padding: 0;
     margin: 0;
     opacity: 1;
     transition: 0s
-
 }
 #dim{
-margin-top:10px;
-font-family:Roboto Medium;
-font-size:25px;
+	margin-top:10px;
+	font-family:Roboto Medium;
+	font-size:25px;
 }
-
 #bac{
-color:#FF0000; 
-font-weight:bold; 
-font-family:ZapfDingbats BT;
- text-shadow: 2px 2px #000; 
+	color:#FF0000; 
+	font-weight:bold; 
+	font-family:ZapfDingbats BT;
+	text-shadow: 2px 2px #000; 
 }
 
-
-
-@media only screen and (max-device-width: 480px) {
-      img{
-	  height:auto;
-	  width:100%;
-	  margin-top:50px;
-	  }
-	  #dim{
-	  padding:0px;
-	  text-align:left;
-	  width:100%;
-	  font-size:24px;
-	   margin-top:40px;
-	   font-size:20px;
-	   
-	  }
-	  h2{
-	  margin-top:50px;
-	  }
-    }
-
- @media only screen and (min-device-width: 481px) {
-       
-    }
 </style>
   
   </head>
 <body>
 
-<div class="tab1">
+<div class="main">
 <h2>Use New Words</h2>
-<h2 style="margin-top: 20px; margin-bottom: -30px; font-size: 30px; ">Choose the correct words from the box into the blanks and complete the sentences.</h2>
+<h2 >Choose the correct words from the box into the blanks and complete the sentences.</h2>
 <br>
-<br>
-<br>
-<div class="container" style ="margin-top:-20px";>		
+<div class="container" >		
 	<div class="row" id="dim">
 	<div class="col-sm-12">
-	1.&nbsp; &nbsp; There are black <select id="1"><option selected disabled>     </option><option>colours</option><option>wet</option><option>clouds</option><option>inside</option><option>garden</option>
-	</select>&nbsp;&nbsp;in the sky. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  clouds</span><span id="bac" class="burp1 hidden">&nbsp; &nbsp; </span><hr class="dashed">
+	1.&nbsp; &nbsp; There are black <select id="tab0"></select>&nbsp;&nbsp;in the sky. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  clouds</span><span id="bac" class="burp1 hidden">&nbsp; &nbsp; </span><hr class="dashed">
 	
 	</div>
 	</div>
-	<div class="row" id="dim" style ="margin-top:5px"; >
+	<div class="row" id="dim" >
 	<div class="col-sm-12">
-	2.&nbsp; &nbsp; We get <select id="2"><option selected disabled>     </option><option>colours</option><option>wet</option><option>clouds</option><option>inside</option><option>garden</option>
-	</select>&nbsp;&nbsp;in the rain. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  wet</span><span id="bac" class="burp1 hidden">&nbsp; &nbsp; </span><hr class="dashed">
+	2.&nbsp; &nbsp; We get <select id="tab1"></select>&nbsp;&nbsp;in the rain.<hr class="dashed">
 	
 	</div>
 	</div>
-	<div class="row" id="dim" style ="margin-top:5px";  >
+	<div class="row" id="dim" >
 	<div class="col-sm-12">
-	3.&nbsp; &nbsp; Children play in the <select id="3"><option selected disabled> </option><option>colours</option><option>wet</option><option>clouds</option><option>inside</option><option>garden</option>
-	</select>&nbsp;&nbsp;. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  garden</span><span id="bac" class="burp1 hidden">&nbsp; &nbsp; </span><hr class="dashed">
+	3.&nbsp; &nbsp; Children play in the <select id="tab2"></select>&nbsp;&nbsp;. <hr class="dashed">
 	
 	</div>
 	</div>
-	<div class="row" id="dim" style ="margin-top:5px";  >
+	<div class="row" id="dim" >
 	<div class="col-sm-12">
-	4.&nbsp; &nbsp; Your dress has many <select id="4"><option selected disabled>     </option><option>colours</option><option>wet</option><option>clouds</option><option>inside</option><option>garden</option>
-	</select>&nbsp;&nbsp;in it. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  colours</span><span id="bac" class="burp1 hidden">&nbsp; &nbsp; </span><hr class="dashed">
+	4.&nbsp; &nbsp; Your dress has many <select id="tab3"></select>&nbsp;&nbsp;in it. <hr class="dashed">
 	
 	</div>
 	</div>
 	
-    <div class="row" id="dim" style ="margin-top:5px";  >
+    <div class="row" id="dim" >
 	<div class="col-sm-12">
-	5.&nbsp; &nbsp; Stay <select id="5"><option selected disabled>     </option><option>colours</option><option>wet</option><option>clouds</option><option>inside</option><option>garden</option>
-	</select>&nbsp;&nbsp;when it rains. <span style="color:#FF0000; font-weight:bold;" class="fog hidden">&nbsp; &nbsp;  inside</span><span id="bac" class="burp1 hidden">&nbsp; &nbsp; </span><hr class="dashed">
+	5.&nbsp; &nbsp; Stay <select id="tab4"></select>&nbsp;&nbsp;when it rains. <hr class="dashed">
 	
 	</div>
 	</div>
 	
 	
-	<div class="row" style="margin-top:-10px;" >
+	<div class="row" >
 	<div class="col-sm-4">
-	<button class="button"   onclick="ho()"><span>Reset </span></button>
+	<button class="button"   onclick="window.location.reload()"><span>Reset </span></button>
 	</div>
 	
 	<div class="col-sm-4">
-	<button class="button" onClick="go()" ><span>Submit </span></button>
+	<button class="button" onClick="check()"  id="Submit"> <span>Submit </span></button>
 	</div>
 
 	<div class="col-sm-4">
-	<button class="button" onClick="show()"><span>Answer Key </span></button>
+	<button class="button" onClick="solve()" id="sol"><span>Answer Key </span></button>
 	</div>
 	</div>
 </div>
@@ -186,7 +156,7 @@ font-family:ZapfDingbats BT;
 <br>
 <br>
 
-<div class="tab4 hidden">
+<div class="well hidden">
 <img  height="auto" width="100%" src="../../../english/Welldone.gif">
 </div>
 
@@ -194,68 +164,86 @@ font-family:ZapfDingbats BT;
 <audio id="audio1" src="../../../english/well-done.mp3"></audio>
 
 <script>
-function ho() {
- 
-window.location="index.html"
-}
-function show() {
- 
-	   $('.fog').removeClass('hidden')
-	   
 
-}
-function go() {
- var a1 = document.getElementById("1");
- var a2 = document.getElementById("2");
- var a3 = document.getElementById("3");
- var a4 = document.getElementById("4");
- var a5 = document.getElementById("5");
- 
- 
- 
+const answers = ['clouds','wet','garden','colours','inside'];
 
-
-
-var ans1 = a1.options[a1.selectedIndex].text;
-var ans2 = a2.options[a2.selectedIndex].text;
-var ans3= a3.options[a3.selectedIndex].text;
-var ans4= a4.options[a4.selectedIndex].text;
-var ans5= a5.options[a5.selectedIndex].text;
-
-
-
-if(ans1!="clouds"){
-$('.burp1').removeClass('hidden')
-}
-if(ans2!="wet"){
-$('.burp2').removeClass('hidden')
-}
-if(ans3!="garden"){
-$('.burp3').removeClass('hidden')
-}
-if(ans4!="colours"){
-$('.burp4').removeClass('hidden')
-}
-if(ans5!="inside"){
-$('.burp5').removeClass('hidden')
+window.onload = function(e){ 
+	$('select').append("<option selected disabled></option><option>wet</option><option>colours</option><option>clouds</option><option>inside</option><option>garden</option>");
+	$("#sol").css("pointer-events", "none");
 }
 
-
-
-if(ans1=="clouds" && ans2=="wet" && ans3=="garden" && ans4=="colours" && ans5=="inside"){
-
-var audio = document.getElementById("audio1");
-       audio.play();
-	   $('.tab1').addClass('hidden')
-	   $('.tab4').removeClass('hidden')
+function solve() {
+	$('#submit').attr('disabled',true);
+	$("select").css("color","green");
+	$("select").css("border","1px solid green");
+	
+	let size = answers.length;
+	console.log(size);
+	var i=0;
+	while(i<size){
+		$('#tab'+i).val(answers[i]).change();
+		i++;
+		console.log(size);	
+	}
 }
-else{
 
-var audio = document.getElementById("audio2");
-       audio.play();
+function check() {
+	var C3A4_error = 0;
+	var C3A4_score = 0;
+	var C3A4_submit = 0;
+	$('select').css('border','1px solid');
+	$("#sol").css("pointer-events", "auto");	
+	let size = answers.length;
+	var i=0;
+	var empty=0;	
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		console.log(input_answer);
+		if(input_answer=='' || input_answer==null){
+			empty++;
+		}
+		i++;
+	}
+	if(empty==size){
+		$("#sol").css("pointer-events", "none");
+	}
+	var i=0;
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer!=answers[i]){
+			$('#tab'+i).css("border",'2px solid red');
+			C3A4_error++;
+			localStorage.setItem('C3A4_error', C3A4_error);
+		}
+		i++;
+	}
+	
+	var i=0;
+	var correct=0;
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer==answers[i]){
+			correct++;
+			C3A4_score++;
+			localStorage.setItem('C3A4_score', C3A4_score);
+		}
+		i++;
+	}
+	if(correct==size){
+		setTimeout(function(){
+			C3A4_submit++;
+			localStorage.setItem('C3A4_submit', C3A4_submit);
+			var audio = document.getElementById("audio1");
+			audio.play();
+			$('.main').addClass('hidden');
+			$('.well').removeClass('hidden');
+		},1000);
+		
+	}else{
+		var audio = document.getElementById("audio2");
+		audio.play();
+	}
 }
-}
-
 
 
 </script>

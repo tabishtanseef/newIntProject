@@ -27,6 +27,9 @@ $(document).ready(function() {
     populateUI();
 
     $("#submitAns").click(function() {
+		var C5A3_error = 0;
+		var C5A3_score = 0;
+		var C5A3_submit = 0;
 		flag = 0;
         $("#btn-tryagain").removeAttr('disabled');
         
@@ -54,6 +57,8 @@ $(document).ready(function() {
         if (flag == 0) {
 			$("#feedback-box").html('<img src="img/correct_Img.gif" />').show();
 			playAudio('well-done.mp3');
+			C5A3_submit++;
+			localStorage.setItem('C5A3_submit', C5A3_submit);
 			setInterval(function(){
 			$('.wrapper').addClass('hidden');
 			$('.tab').removeClass('hidden');},2000);
@@ -87,6 +92,8 @@ $(document).ready(function() {
                 if ((lineDraw[i].lval.attr("id") + "_" + lineDraw[i].rval.attr("id")) == value) {
                     lineDraw[i].lval[0].parentElement.children[0].className = 'tick';
                     status++;
+					C5A3_score++;
+					localStorage.setItem('C5A3_score', C5A3_score);
                 }
             }
 
@@ -94,11 +101,14 @@ $(document).ready(function() {
         //this loop set a wrong tick mark before each wrong answer
         $.each(tempJsonObj.Answer, function(j, value) {
             for (i = 0; i < lineDraw.length; i++) {
-                if (((lineDraw[i].lval.attr("id") + "_" + lineDraw[i].rval.attr("id")) != value) && (lineDraw[i].lval[0].parentElement.children[0].className != 'tick'))
+                if (((lineDraw[i].lval.attr("id") + "_" + lineDraw[i].rval.attr("id")) != value) && (lineDraw[i].lval[0].parentElement.children[0].className != 'tick')){
                     lineDraw[i].lval[0].parentElement.children[0].className = 'wrong';
+					C5A3_error++;
+				}
             }
         });
-
+		C5A3_error = C5A3_error/4;
+		localStorage.setItem('C5A3_error', C5A3_error);
         if (status == 5) {
             $("#showAns").attr('disabled', 'disabled')
         } else {

@@ -3,648 +3,219 @@
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <style>
-
-body{
-background-image:url('../../../img/b1.png');
-background-attachment:fixed;
-background-size:cover;
+body {
+	background-image: url('../../../img/b1.png');
+	background-attachment:fixed;
 }
- 
- h4{
- color:blue;
- text-align:center;
- font-family:roboto medium, arial;
- }
-
-
-h3{
-
- padding:40px;
-background-color: #ffffff8f;
-font-family:roboto medium, arial;
-
- }
- 
-h2{
- padding:10px;
-text-align:center;
-background-color: #ffffff8f;
-font-family:dimbo;
-}
-select{
-margin-top:10px;
+h2,h3 {
+	background:white;
+	margin-top: 10px;
+	border: 2px solid #156a93;
+	box-shadow:5px 5px 5px #156a93;
+	padding: 20px; 
+	border-radius:20px;
+	text-align: center;
+	font-weight: bold
 }
 .block {
-    display: block;
-    width: 60%;
-    border: none;
-    background-color: #ffffff8f;
-	font-family:roboto medium, arial;
-    padding: 14px 28px;
-    font-size: 26px;
-    cursor: pointer;
-    text-align: center;
+	display: block;
+	width:100%;
+	border: none;
+	margin-top: 5px;
+	border-radius:20px;
+	background: #97D0EC;
+	color:black;			
+	font-family: 'Roboto', sans-serif;
+	padding: 10px 24px;
+	font-size: 16px;
+	cursor: pointer;
+	text-align: left;
 }
-.hidden{
-display:none;
+.tab1{
+	margin-top:20px;
+	padding:30px;
+	margin-bottom:50px;
+	font-family: 'Mukta', sans-serif;
+	background-image:url('../../../img/yellow.jpg');
+	box-shadow:5px 5px 5px #DD4803;
+	border:2px solid #DD4803;
+	width:80%;
 }
-#dim{
-margin-top:10px;
+.ques1{
+	border: 2px solid #156a93;
+    background:white;
+	margin: 20px;
+	border-radius:20px;
+	box-shadow:5px 5px 5px #156a93;
+	padding: 20px;
+	font-weight:bold;
+	font-size: 22px;
 }
-audio{
 
-margin:30px;
+.hidden {
+	display: none
 }
-@media only screen and (max-device-width: 480px) {
-      img{
-	  height:auto;
-	  width:100%;
-	  margin-top:50px;
-	  }
-	  #dim{
-	  width:100%;
-	   margin-top:40px;
-	  }
-    }
 
- @media only screen and (min-device-width: 481px) {
-       img{
-	  height:auto;
-	  }
-    }
 </style>
-  
-  </head>
+</head>
 <body>
-<center>
-<h2>LISTENING CAREFULLY</h2>
-
-<div id="pk">
-<div class="aaa hidden">
-
-<h2 >Listen very carefully to the questions and put click on the correct  answer.</h2>
-</div>
-<br>
-
-<div class="ss" >
-
-<center><audio id="bb" src="audio/1.mp3" controls></audio></center>
-<div class="container" id="hoho">
-<h3>Listen very carefully to the questions and put click on the correct  answer.</h3>
-</div>
-</div>
-</div>
-
-
-
-
-
-<div class="pks hidden" >
-
-<div class="tab1 ">
 <div class="container">
-<br><h4> 1. What is the colour of the sky?</h4>
-
-<br>
-		<div class="row" id="dim" >
-	<div class="col-sm-12">
-	<button type="button" class="block" id="correct1" onclick="correct1()">blue</button>
+	<h3>LISTENING CAREFULLY <br><br> Listen very carefully to the questions and put click on the correct answer.</h3>
+	<div class="rohit">
+	<div class="ques1 ">
+		<div class="row">
+			<div class="col-md-2"><center><img src="../../../img/s.png" style="height:40px; " onclick="play(1)"></center></div>
+			<div class="col-md-10"><h5>Q.1 : What is the colour of the sky?</h5></div>
+			<div class="col-md-2"></div>
+			<div class="col-md-5">
+				<button class="block" onclick="wrong(11)" id="wrong11">yellow</button>
+			</div>
+			<div class="col-md-5">
+				<button class="block" onclick="correct(1)" id="correct1">blue</button>
+			</div>
+		</div>
+			<hr>
+		<div class="row">
+			<div class="col-md-2"><center><img src="../../../img/s.png" style="height:40px; " onclick="play(2)"></center></div>
+			<div class="col-md-10"><h5>Q.2 : What is the shape of the sun?</h5></div>
+			<div class="col-md-2" ></div>
+			<div class="col-md-5">
+				<button class="block" onclick="correct(2)" id="correct2">round</button>
+			</div>
+			<div class="col-md-5">
+				<button class="block" onclick="wrong(12)" id="wrong12">square</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-2"><center><img src="../../../img/s.png" style="height:40px; " onclick="play(3)"></center></div>
+			<div class="col-md-10"><h5>Q.3 : What is the colour of the kite?</h5></div>
+			<div class="col-md-2" ></div>
+			<div class="col-md-5">
+				<button class="block" onclick="correct(3)" id="correct3">red</button>
+			</div>
+			<div class="col-md-5">
+				<button class="block" onclick="wrong(13)" id="wrong13">yellow</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-2"><center><img src="../../../img/s.png" style="height:40px; " onclick="play(4)"></center></div>
+			<div class="col-md-10"><h5>Q.4 : What did Sam and Mini see after the rain stopped?</h5></div>
+			<div class="col-md-2" ></div>
+			<div class="col-md-5">
+				<button class="block" onclick="wrong(14)" id="wrong14">bird</button>
+			</div>
+			<div class="col-md-5">
+				<button class="block" onclick="correct(4)" id="correct4">rainbow </button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-2"><center><img src="../../../img/s.png" style="height:40px; " onclick="play(5)"></center></div>
+			<div class="col-md-10"><h5>Q.5 : What do black clouds bring ? </h5></div>
+			<div class="col-md-2" ></div>
+			<div class="col-md-5">
+				<button class="block" onclick="wrong(15)" id="wrong15">rainbow</button>
+			</div>
+			<div class="col-md-5">
+				<button class="block" onclick="correct(5)" id="correct5">rain</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-4"><center><img id="" onclick="window.location.reload()" src="../../../img/res2.png" onmouseover="this.src='../../../img/res1.png'" onmouseout="this.src='../../../img/res2.png'" style="margin-top:10px; width:60%;"></center></div>
+			<div class="col-md-4"><center><img id="submit" onclick="done()" src="../../../img/sub2.png" onmouseover="this.src='../../../img/sub1.png'" onmouseout="this.src='../../../img/sub2.png'" style="margin-top:10px; width:60%;"></center></div>
+			<div class="col-md-4"><center><img id="sol"  onclick="show()" src="../../../img/solu2.png" onmouseover="this.src='../../../img/solu1.png'" onmouseout="this.src='../../../img/solu2.png'" style="margin-top:10px; width:60%;"></center></div>
+		</div>
 	</div>
 	</div>
-
-	<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="wrong1" onclick="wrong1()">yellow</button>
-	</div>
-	</div>
-	
+	<br>
 </div>
-</div>
-</div>
-
-<div class="extra">
-<div class="tab2 hidden">
-<div class="container">
-<br><h4>2. What is the shape of the sun?</h4><br>
-	<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="wrong4" onclick="wrong4()">square</button>
-	</div>
-	</div>
-	<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="correct2" onclick="correct2()">round</button>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-
-<div class="extra2">
-<div class="tab3 hidden">
-<div class="container">
-<br><h4>3. What is the colour of the kite? </h4><br>
-	<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="correct3" onclick="correct3()">red</button>
-	</div>
-	</div>
-		<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="wrong5" onclick="wrong5()">yellow</button>
-	</div>
-	</div>
-
-</div>
-</div>
-</div>
-<div class="extra3">
-<div class="tab4 hidden">
-<div class="container">
-<br><h4>4. What did Sam and Mini see after the rain stopped? </h4><br>
-    <div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="correct4" onclick="correct4()">rainbow</button>
-	</div>
-	</div>
-
-	<div class="row" id="dim" >
-	<div class="col-sm-12">
-	<button type="button" class="block" id="wrong7" onclick="wrong7()">bird</button>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-<div class="extra4">
-<div class="tab5 hidden">
-<div class="container">
-<br><h4>5. What do black clouds bring ?</h4><br>
-	<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="wrong9" onclick="wrong9()">rainbow</button>
-	</div>
-	</div>
-
-	<div class="row" id="dim" >
-	<div class="col-sm-12">
-	<button type="button" class="block" id="correct5" onclick="correct5()" >rain</button>
-	</div>
-	</div>
-</div>
-</div>
-</div>
-
-<div class="extra5">
-<div class="tab66 hidden">
-<div class="container">
-<br><br>
-	<div class="row" id="dim" >
-	<div class="col-sm-12">
-	<button type="button" class="block" id="correct6" onclick="correct6()" >The exotic beaches and beautiful islands encourage people to take part in adventure sports like snorkeling and sea-walking.</button>
-	</div>
-	</div>
-
-		<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="wrong11" onclick="wrong11()"> The exotic beaches and beautiful islands encourage people to take part in adventure sports like snorkeling and reef-walking.</button>
-	</div>
-	</div>
-
-
-</div>
-</div>
-</div>
-
-<div class="extra6">
-<div class="tab77 hidden">
-<div class="container">
-	<div class="row" >
-	<div class="col-md-12">
-<h4> The running area is called the running strip. </h4>
-<br>	
-	</div>
-	</div>
-
-	<div class="row" id="dim" >
-	<div class="col-sm-12">
-	<button type="button" class="block" id="correct7" onclick="correct7()" >False</button>
-	</div>
-	</div>
-	<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="wrong12" onclick="wrong12()">True</button>
-	</div>
-	</div>
-
-</div>
-</div>
-</div>
-<div class="extra7">
-<div class="tab8 hidden">
-<div class="container">
-	<div class="row" >
-	<div class="col-md-12">
-<h4>The result depends upon the longest single legal throw.</h4>
-<br>	
-	</div>
-	</div>
-	<div class="row" id="dim" >
-	<div class="col-sm-12">
-	<button type="button" class="block" id="correct8" onclick="correct8()" >True</button>
-	</div>
-	</div>
-	
-	<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="wrong13" onclick="wrong13()">False</button>
-	</div>
-	</div>
-
-
-
-</div>
-</div>
-</div>
-<div class="extra8">
-<div class="tab99 hidden">
-<div class="container">
-	<div class="row" >
-	<div class="col-md-12">
-	<audio src="audio/9.mp3" controls></audio>
-	</div>
-	</div>
-		<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<button type="button" class="block" id="wrong14" onclick="wrong14()">True</button>
-	</div>
-	</div>
-
-	<div class="row" id="dim" >
-	<div class="col-sm-12">
-	<button type="button" class="block" id="correct9" onclick="correct9()" >False</button>
-	</div>
-	</div>
-
-</div>
-</div>
-</div>
-
-
-
-<div class="tab6 hidden">
-<div class="container">
-	<div class="row" id="dim"  >
-	<div class="col-md-12">
-	<img  height="auto" width="100%"  src="../../../english/Welldone.gif">
-	</div>
-	</div>
-</div>
+<div class="tab2 hidden" >
+	<center> <img height="auto" width="100%" src="../../../english/Welldone.gif"></center>
 </div>
 <audio id="audio2" src="../../../english/try-again.mp3"></audio>
-<audio id="audio1" src="audio/2.mp3"></audio>
-<audio id="audio3" src="audio/3.mp3"></audio>
-<audio id="audio4" src="audio/4.mp3"></audio>
-<audio id="audio5" src="../../../english/well-done.mp3"></audio>
-<audio id="audio6" src="audio/5.mp3"></audio>
-</center>
-
-
-
-
+<audio id="audio1" src="../../../english/well-done.mp3"></audio>
+<audio src="audio/1.mp3" id="s1"></audio>
+<audio src="audio/2.mp3" id="s2"></audio>
+<audio src="audio/3.mp3" id="s3"></audio>
+<audio src="audio/4.mp3" id="s4"></audio>
+<audio src="audio/5.mp3" id="s5"></audio>
+<iframe src="audio/0.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> 
 <script>
 
+var C3A1_error = 0;
+var C3A1_score = 0;
+var C3A1_submit = 0;
 
-function updateCurrentTime() 
-    {
-        var song = document.querySelector('#bb');
-        var currentTime = Math.floor(song.currentTime);
-        
-        var duration = Math.floor(song.duration);
-       
-       console.log(currentTime);
-        console.log(duration);
-		
-		if(currentTime==4){
- $('.aaa').removeClass('hidden')
- $('.pks').removeClass('hidden')
- $('.ss').addClass('hidden')
-
-
-}
-		
-    }
-
-window.onload = function()
-    {  updateCurrentTime();
-      setInterval(function()
-        {
-            updateCurrentTime();
-        },1000);
-    }
-
-
-
-
-
-
-
-function correct1() {
- var a1 = document.getElementById("correct1");
- var a2 = document.getElementById("wrong1");
- 
- a1.style.backgroundColor = "#00FF00"
- a2.style.backgroundColor = "#ffffff8f"
-
- var audio = document.getElementById("audio1");
-       audio.play();
-	   var audio = document.getElementById("bb");
-       audio.pause();
-	   var audio = document.getElementById("audio2");
-       audio.pause();
-setInterval(function(){ $('.tab1').addClass('hidden')
-	   $('.tab2').removeClass('hidden')},1000);
-      
-	   
-}
-function wrong1() {
- var a1 = document.getElementById("correct1");
- var a2 = document.getElementById("wrong1");
-
- a1.style.backgroundColor = "#ffffff8f"
- a2.style.backgroundColor = "#ff0000"
-
- var audio = document.getElementById("audio2");
-       audio.play();
-}
-function wrong2() {
- var a1 = document.getElementById("correct1");
- var a2 = document.getElementById("wrong1");
- var a3 = document.getElementById("wrong2");
- a1.style.backgroundColor = "#ffffff8f"
- a3.style.backgroundColor = "#ff0000"
- a2.style.backgroundColor = "#ffffff8f"
- var audio = document.getElementById("audio2");
-       audio.play();
-}
-function correct2() {
- var a1 = document.getElementById("correct2");
- 
- var a3 = document.getElementById("wrong4");
- a1.style.backgroundColor = "#00FF00"
- 
- a3.style.backgroundColor = "#ffffff8f"
- var audio = document.getElementById("audio3");
-       audio.play();
-	   var audio = document.getElementById("audio1");
-       audio.pause();
-	   var audio = document.getElementById("audio2");
-       audio.pause();
-setInterval(function(){ $('.extra').addClass('hidden')
-	   $('.tab3').removeClass('hidden')},1000);
-}
-function wrong3() {
- var a1 = document.getElementById("correct2");
- var a2 = document.getElementById("wrong3");
- var a3 = document.getElementById("wrong4");
- a1.style.backgroundColor = "#ffffff8f"
- a2.style.backgroundColor = "#ff0000"
- a3.style.backgroundColor = "#ffffff8f"
- var audio = document.getElementById("audio2");
-       audio.play();
-}
-function wrong4() {
- var a1 = document.getElementById("correct2");
- var a2 = document.getElementById("wrong3");
- var a3 = document.getElementById("wrong4");
- a1.style.backgroundColor = "#ffffff8f"
- a3.style.backgroundColor = "#ff0000"
- 
- var audio = document.getElementById("audio2");
-       audio.play();
+function play(a){
+	var audio = document.getElementById('s'+a);
+	audio.play();
 }
 
-function correct3() {
- var a1 = document.getElementById("correct3");
- var a2 = document.getElementById("wrong5");
- var a3 = document.getElementById("wrong6");
- a1.style.backgroundColor = "#00FF00"
- a2.style.backgroundColor = "#ffffff8f"
- 
- var audio = document.getElementById("audio4");
-       audio.play();
-	   var audio = document.getElementById("audio3");
-       audio.pause();
-	   var audio = document.getElementById("audio2");
-       audio.pause();
-setInterval(function(){ $('.extra2').addClass('hidden')
-	   $('.tab4').removeClass('hidden')},1000);
-}
-function wrong5() {
- var a1 = document.getElementById("correct3");
- var a2 = document.getElementById("wrong5");
- var a3 = document.getElementById("wrong6");
- a1.style.backgroundColor = "#ffffff8f"
- a2.style.backgroundColor = "#ff0000"
- 
- var audio = document.getElementById("audio2");
-       audio.play();
-}
-function wrong6() {
- var a1 = document.getElementById("correct3");
- var a2 = document.getElementById("wrong5");
- var a3 = document.getElementById("wrong6");
- a1.style.backgroundColor = "#ffffff8f"
- a3.style.backgroundColor = "#ff0000"
- a2.style.backgroundColor = "#ffffff8f"
- var audio = document.getElementById("audio2");
-       audio.play();
-}
-function correct4() {
- var a1 = document.getElementById("correct4");
- var a2 = document.getElementById("wrong7");
- 
- a1.style.backgroundColor = "#00FF00"
- a2.style.backgroundColor = "#ffffff8f"
- 
- var audio = document.getElementById("audio6");
-       audio.play();
-	   var audio = document.getElementById("audio4");
-       audio.pause();
-	   var audio = document.getElementById("audio2");
-       audio.pause();
-setInterval(function(){ $('.extra3').addClass('hidden')
-	   $('.tab5').removeClass('hidden')},1000);
-}
-function wrong7() {
- var a1 = document.getElementById("correct3");
- var a2 = document.getElementById("wrong7");
- 
- a1.style.backgroundColor = "#ffffff8f"
- a2.style.backgroundColor = "#ff0000"
- 
- var audio = document.getElementById("audio2");
-       audio.play();
-
-}
-function wrong8() {
- var a1 = document.getElementById("correct3");
- var a2 = document.getElementById("wrong7");
- a1.style.backgroundColor = "#00FF00"
- a2.style.backgroundColor = "#ffffff8f"
- 
- var audio = document.getElementById("audio2");
-       audio.play();
-
-}
-function correct5() {
- var a1 = document.getElementById("correct5");
- var a2 = document.getElementById("wrong9");
- 
- a1.style.backgroundColor = "#00FF00"
- a2.style.backgroundColor = "#ffffff8f"
- var audio = document.getElementById("audio5");
-       audio.play();
-setInterval(function(){ $('.extra4').addClass('hidden')
-$('h2').addClass('hidden')
-	   $('.tab6').removeClass('hidden')},2000);
-}
-function wrong9() {
- var a1 = document.getElementById("correct5");
- var a2 = document.getElementById("wrong9");
- 
- a1.style.backgroundColor = "#ffffff8f"
- a2.style.backgroundColor = "#ff0000"
-
- var audio = document.getElementById("audio2");
-       audio.play();
-
-}
-function wrong10() {
- var a1 = document.getElementById("correct5");
- var a2 = document.getElementById("wrong9");
- var a3 = document.getElementById("wrong10");
- a1.style.backgroundColor = "#00FF00"
- a2.style.backgroundColor = "#ffffff8f"
- a3.style.backgroundColor = "#ffffff8f"
- var audio = document.getElementById("audio2");
-       audio.play();
-
-}
-function correct6() {
- var a1 = document.getElementById("correct6");
- var a2 = document.getElementById("wrong11");
- 
- a1.style.backgroundColor = "#00FF00"
- a2.style.backgroundColor = "#ffffff8f"
- 
- var audio = document.getElementById("audio1");
-       audio.play();
-setInterval(function(){ $('.extra5').addClass('hidden')
-$('h2').addClass('hidden')
-	   $('.tab7').removeClass('hidden')},2000);
-}
-function wrong11() {
- var a1 = document.getElementById("correct6");
- var a2 = document.getElementById("wrong11");
- 
- a1.style.backgroundColor = "#ffffff8f"
- a2.style.backgroundColor = "#ff0000"
- 
- var audio = document.getElementById("audio2");
-       audio.play();
-
+function wrong(a) {
+	$('#wrong' + a).css('color', 'white');
+	$('#wrong' + a).css('background', 'red');
+	$('#wrong' + a).css('pointer-events', 'none');
+	C3A1_error++;
+	localStorage.setItem('C3A1_error', C3A1_error);
+	var audio = document.getElementById('audio2');
+	audio.play();
 }
 
+var i, j, k, l, m;
 
-
-function correct7() {
- var a1 = document.getElementById("correct7");
- var a2 = document.getElementById("wrong12");
- 
- a1.style.backgroundColor = "#00FF00"
- a2.style.backgroundColor = "#ffffff8f"
- var audio = document.getElementById("audio1");
-       audio.play();
-setInterval(function(){ $('.extra6').addClass('hidden')
-	   $('.tab8').removeClass('hidden')},2000);
+function correct(a) {
+	b = a+10;
+	$('#wrong' + b).css('pointer-events', 'none');
+	if(a==1){ i = 1;}
+	else if(a==2){ j = 1;}
+	else if(a==3){ k = 1;}
+	else if(a==4){ m = 1;}
+	else { l = 1;}
+	var audio = document.getElementById('audio1');
+	audio.play();
+	$('#correct' + a).css('background', '#005b00');
+	$('#correct' + a).css('pointer-events', 'none'); 
+	$('#correct' + a).css('color', 'white'); 
+	C3A1_score++;
+	localStorage.setItem('C3A1_score', C3A1_score);
 }
-function wrong12() {
- var a1 = document.getElementById("correct7");
- var a2 = document.getElementById("wrong12");
- 
- a1.style.backgroundColor = "#ffffff8f"
- a2.style.backgroundColor = "#ff0000"
-
- var audio = document.getElementById("audio2");
-       audio.play();
-
-}
-
-
-
-
-function correct8() {
- var a1 = document.getElementById("correct8");
- var a2 = document.getElementById("wrong13");
- 
- a1.style.backgroundColor = "#00FF00"
- a2.style.backgroundColor = "#ffffff8f"
- var audio = document.getElementById("audio1");
-       audio.play();
-setInterval(function(){ $('.extra7').addClass('hidden')
-$('h2').addClass('hidden')
-	   $('.tab9').removeClass('hidden')},2000);
-}
-function wrong13() {
- var a1 = document.getElementById("correct8");
- var a2 = document.getElementById("wrong13");
- 
- a1.style.backgroundColor = "#ffffff8f"
- a2.style.backgroundColor = "#ff0000"
-
- var audio = document.getElementById("audio2");
-       audio.play();
-
+	
+function done(){
+	if(i == 1 && j == 1 && k == 1 && l == 1 && m == 1  ){
+		C3A1_submit++;
+		localStorage.setItem('C3A1_submit', C3A1_submit);
+		setTimeout(function(){
+			var audio = document.getElementById('audio1');
+			audio.play();
+			$('.container').addClass('hidden');
+			$('.tab2').removeClass('hidden');
+		},1000);
+	}
+	else{
+		var audio = document.getElementById('audio2');
+		audio.play();
+	}
 }
 
-
-
-
-function correct9() {
- var a1 = document.getElementById("correct9");
- var a2 = document.getElementById("wrong14");
- 
- a1.style.backgroundColor = "#00FF00"
- a2.style.backgroundColor = "#ffffff8f"
- var audio = document.getElementById("audio1");
-       audio.play();
-setInterval(function(){ $('.extra8').addClass('hidden')
-
-$('h2').addClass('hidden')
-
-	   $('.tab10').removeClass('hidden')},2000);
-}
-function wrong14() {
- var a1 = document.getElementById("correct9");
- var a2 = document.getElementById("wrong14");
- 
- a1.style.backgroundColor = "#ffffff8f"
- a2.style.backgroundColor = "#ff0000"
-
- var audio = document.getElementById("audio2");
-       audio.play();
-
+function show(){
+	$('#submit').css('pointer-events','none');
+	var i = 1;
+	while(i<=5){
+		$('#correct'+i).css('background','#005b00');$('#correct'+i).css('color', 'white'); 
+		i++;
+	}
 }
 
-
-</script>
-
+ </script>
 </body>
+
 </html>

@@ -37,6 +37,7 @@ select{
 margin-top:10px;
 }
 .tt{
+background:#fff;
 border:2px solid white;
 border-radius:20px;
 padding:20px;
@@ -47,7 +48,7 @@ img{
 border-radius:20px;
 }
 .bb{
-margin-top:10px;
+	margin-top:10px;
 }
 </style>
   
@@ -59,29 +60,26 @@ margin-top:10px;
 
 <center>
 <div class="container">
-<br>
-<br>
+	<br>
+	<br>
     <div class="row">
-		
 		<div class="col-sm-3 tt">
-		<img height="" width="100%" src="items/3.png"><br>A&nbsp;&nbsp;<select id="first" ><option selected disabled></option><option>ball</option><option>tail</option><option>puppy</option></select>&nbsp;&nbsp;is a small dog.
+		<img width="100%" src="items/3.png"><br>A&nbsp;&nbsp;<select id="tab0" ><option selected disabled></option><option>ball</option><option>tail</option><option>puppy</option></select>&nbsp;&nbsp;is a small dog.
 		</div>
 		<div class="col-sm-3 tt">
-		<img height="" width="100%" src="items/2.png"><br>We play with a&nbsp;&nbsp;<select id="firs" ><option selected disabled></option><option>ball</option><option>tail</option><option>puppy</option></select>&nbsp;&nbsp;.
+		<img width="100%" src="items/2.png"><br>We play with a&nbsp;&nbsp;<select id="tab1" ><option selected disabled></option><option>ball</option><option>tail</option><option>puppy</option></select>&nbsp;&nbsp;.
 		</div>
 		<div class="col-sm-3 tt">
-		<img height="" width="100%" src="items/1.png"><br>A dog wags its&nbsp;&nbsp;<select id="fir" ><option selected disabled></option><option>ball</option><option>tail</option><option>puppy</option></select>&nbsp;&nbsp;.
+		<img width="100%" src="items/1.png"><br>A dog wags its&nbsp;&nbsp;<select id="tab2" ><option selected disabled></option><option>ball</option><option>tail</option><option>puppy</option></select>&nbsp;&nbsp;.
 		</div>
 	</div>
 	<br>
 	<br>
 	<div class="row">	
-	<div class="col-sm-4 bb"><button type="reset"class="btn btn-danger" onclick="window.location.reload()">Reset</button></div>
-	<div class="col-sm-4 bb"><button class="btn btn-info"onclick="go()" >Submit</button></div>
-	<div class="col-sm-4 bb"><button class="btn btn-primary" onclick="show()">Check Answer</button></div>
+		<div class="col-sm-4 bb"><button type="reset"class="btn btn-danger" onclick="location.reload()">Reset</button></div>
+		<div class="col-sm-4 bb"><button class="btn btn-info"onclick="check()" >Submit</button></div>
+		<div class="col-sm-4 bb"><button class="btn btn-primary" onclick="solve()">Check Answer</button></div>
 	</div>
-	
-
 </div>
 </center>
 <audio src="../../../english/well-done.mp3" id="audio1"></audio>
@@ -92,39 +90,86 @@ margin-top:10px;
 </div>
 <script>
 
-function go() {
- var a1 = document.getElementById("first");
- var a2 = document.getElementById("firs");
- var a3 = document.getElementById("fir");
- 
 
- 
-var ans1 = a1.options[a1.selectedIndex].text;
-var ans2 = a2.options[a2.selectedIndex].text;
-var ans3= a3.options[a3.selectedIndex].text;
+const answers = ['puppy','ball','tail'];
 
-
-
-if(ans1=="puppy" && ans2=="ball" && ans3=="tail"){
-$('.crow').removeClass("hidden");
-$('center').addClass("hidden");
-$('h2').addClass("hidden");
-$('h3').addClass("hidden");
-var audio = document.getElementById('audio1');
-audio.play();
+window.onload = function(e){ 
+	$("#sol").css("pointer-events", "none");
 }
-else{
-var audio = document.getElementById('audio2');
-audio.play();
-}
-}
-function show() {
-document.getElementById('first').value="puppy"
-document.getElementById('firs').value="ball"
-document.getElementById('fir').value="tail"
 
-
+function solve() {
+	$('#submit').attr('disabled',true);
+	$("select").css("color","green");
+	$("select").css("border","1px solid green");
+	
+	let size = answers.length;
+	console.log(size);
+	var i=0;
+	while(i<size){
+		$('#tab'+i).val(answers[i]).change();
+		i++;
+		console.log(size);
+	}
 }
+
+function check() {
+	var C1A4_error = 0;
+	var C1A4_score = 0;
+	var C1A4_submit = 0;
+	$('select').css('border','1px solid');
+	$("#sol").css("pointer-events", "auto");	
+	let size = answers.length;
+	var i=0;
+	var empty=0;	
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		console.log(input_answer);
+		if(input_answer=='' || input_answer==null){
+			empty++;
+		}
+		i++;
+	}
+	if(empty==size){
+		$("#sol").css("pointer-events", "none");
+	}
+	var i=0;
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer!=answers[i]){
+			$('#tab'+i).css("border",'2px solid red');
+			C1A4_error++;
+			localStorage.setItem('C1A4_error', C1A4_error);
+		}
+		i++;
+	}
+	
+	var i=0;
+	var correct=0;
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer==answers[i]){
+			correct++;
+			C1A4_score++;
+			localStorage.setItem('C1A4_score', C1A4_score);
+		}
+		i++;
+	}
+	if(correct==size){
+		setTimeout(function(){
+			C1A4_submit++;
+			localStorage.setItem('C1A4_submit', C1A4_submit);
+			var audio = document.getElementById("audio1");
+			audio.play();
+			$('.main').addClass('hidden');
+			$('.well').removeClass('hidden');
+		},2000);
+		
+	}else{
+		var audio = document.getElementById("audio2");
+		audio.play();
+	}
+}
+
 
 
 </script>

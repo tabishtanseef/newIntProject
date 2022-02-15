@@ -11,25 +11,26 @@
 <style>
 
 body{
-background-image:url('../../../img/yellow.jpg');
-background-attachment:fixed;
+	background-image:url('../../../img/yellow.jpg');
+	background-attachment:fixed;
+}
 
-}
- 
+
 h2{
- padding:10px;
-text-align:center;
-background-color:#ffffff8f;
-font-family:roboto condensed, cursive;
+	text-align:center;
+	background-color:#ffffff8f;
+	font-family:Dimbo; 
+	padding-bottom:10px;
+	padding-top:10px;
 }
-h3{
-margin-top:50px;
-background-color:#ffffff8f;
-padding:10px;
-font-weight:bold;
+.container{
+	background:#ffffff8f;
+	border:5px solid #ffffff;
+	padding:50px;
+	border-radius:20px;
 }
 select{
-margin-top:10px;
+	margin-top:10px;
 }
 .block {
     display: block;
@@ -44,95 +45,99 @@ margin-top:10px;
     text-align: center;
 }
 .hidden{
-display:none;
+	display:none;
 }
 #bac{
-color:#FF0000; 
-font-weight:bold; 
-font-family:ZapfDingbats BT;
- text-shadow: 2px 2px #000; 
- margin-left:20px;
+	color:#FF0000; 
+	font-weight:bold; 
+	font-family:ZapfDingbats BT;
+	text-shadow: 2px 2px #000; 
+	margin-left:20px;
+}
+.button {
+    position: relative;
+    background-color: #f4511e;
+    border: none;
+	margin-top: 30px;
+	margin-left: 45px;
+    font-size: 25px;
+	font-family:CAC Moose, cursive;
+    color: #FFFFFF;
+    padding: 1px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
 }
 #dim{
-margin-top:10px;
-text-align:left;
-font-family: roboto;
-font-size:20px;
+	margin-top:10px;
+	text-align:left;
+	font-family: roboto;
+	font-size:20px;
 }
 input{
-text-align:center;
-font-weight:bold;
+	text-align:center;
+	font-weight:bold;
 }
 audio{
-
-margin:30px;
+	margin:30px;
 }
-@media only screen and (max-device-width: 480px) {
-      
-	  #crow{
-margin-top: 70%;
-}
-	  #dim{
-	  width:100%;
-	   margin-top:40px;
-	  }
-    }
-
- @media only screen and (min-device-width: 481px) {
-     
-    }
+	
 </style>
   
   </head>
 <body>
+
+<div class="main">
 <h2>SMART LANGUAGE</h2>
 <center>
-<h3 style="background-color:#ffffff9f; margin-top:20px;">Choose 'This' or 'These' for each sentence.</h3>
+<h2>Choose 'This' or 'These' for each sentence.</h2>
 
 <br>
-<br>
-<div class="tab1">
 <div class="container">
 	
 	<div class="row" id="dim"  >
 	
 	<div class="col-md-4">
-	1.&nbsp; <select id="a1"><option disabled selected></option><option>This</option><option>These</option></select> is a bag.<span id="bac" class="burp1 hidden"></span>
+	1.&nbsp; <select id="tab0"><option disabled selected></option><option>This</option><option>These</option></select> is a bag.
 	</div>
 	</div>
 	<hr>
 	<div class="row" id="dim"  >
 	
 	<div class="col-md-4">
-	2.&nbsp; <select id="a2"><option disabled selected></option><option>This</option><option>These</option></select> are phones.<span id="bac" class="burp2 hidden"></span>
+	2.&nbsp; <select id="tab1"><option disabled selected></option><option>This</option><option>These</option></select> are phones.
 	</div>
 	</div>
 	<hr>
 	<div class="row" id="dim"  >
 	
 	<div class="col-md-4">
-	3.&nbsp; <select id="a3"><option disabled selected></option><option>This</option><option>These</option></select> are glasses.<span id="bac" class="burp3 hidden"></span>
+	3.&nbsp; <select id="tab2"><option disabled selected></option><option>This</option><option>These</option></select> are glasses.
 	</div>
 	</div>
 	<hr>
 	<div class="row" id="dim"  >
 	
 	<div class="col-md-4">
-	4.&nbsp; <select id="a4"><option disabled selected></option><option>This</option><option>These</option></select> is a pen.<span id="bac" class="burp4 hidden"></span>
+	4.&nbsp; <select id="tab3"><option disabled selected></option><option>This</option><option>These</option></select> is a pen.
 	</div>
 	</div>
 	
 	<hr>
 	
-	<div class="row" id="dim" >
+	<div class="row"  >
 	<div class="col-sm-4">
-	<center><button class="block" onclick="window.location.reload()">Reset</button></center>
+	<center><button class="button" onclick="window.location.reload()"><span>Reset </span></button></center>
 	</div>
 	<div class="col-sm-4">
-	<center><button class="block" onclick="check()">Submit</button></center>
+	<center><button class="button" onclick="check()" id="submit"> <span>Submit</span></button></center>
 	</div>
 	<div class="col-sm-4">
-	<center><button class="block" onclick="solve()">Answer key</button></center>	
+	<center><button class="button" onclick="solve()" id="sol"><span>Answer key</span></button></center>	
 	</div>
 	</div>
 	
@@ -142,15 +147,8 @@ margin-top: 70%;
 <br>
 <br>
 
-<div class="tab10 hidden">
-
-<div class="container">
-	<div class="row" id="dim"  >
-	<div class="col-md-12">
+<div class="well hidden">
 	<img  height="auto" width="100%"  src="../../../english/Welldone.gif">
-	</div>
-	</div>
-</div>
 </div>
 
 <audio id="audio2" src="../../../english/try-again.mp3"></audio>
@@ -162,55 +160,83 @@ margin-top: 70%;
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-function check() {
- var a1 = document.getElementById("a1");
- var a2 = document.getElementById("a2");
- var a3 = document.getElementById("a3");
- var a4 = document.getElementById("a4");
-var ans1= a1.options[a1.selectedIndex].text;
-var ans2= a2.options[a2.selectedIndex].text;
-var ans3= a3.options[a3.selectedIndex].text;
-var ans4= a4.options[a4.selectedIndex].text;
 
-if(ans1.toLowerCase()!="this"){
-$('.burp1').removeClass('hidden');
-$('#a1').css("border",'2px solid red');
-}
-if(ans2.toLowerCase()!="these"){
-$('.burp2').removeClass('hidden');
-$('#a2').css("border",'2px solid red');
-}
-if(ans3.toLowerCase()!="these"){
-$('.burp3').removeClass('hidden');
-$('#a3').css("border",'2px solid red');
-}
-if(ans4.toLowerCase()!="this"){
-$('.burp4').removeClass('hidden');
-$('#a4').css("border",'2px solid red');
-}
-if(ans1.toLowerCase()=="this" && ans2.toLowerCase()=="these" && ans3.toLowerCase()=="these" && ans4.toLowerCase()=="this" ){
+const answers = ['This','These','These','This'];
 
- var audio = document.getElementById("audio1");
-       audio.play();
-setInterval(function(){ $('.tab1').addClass('hidden')
-$('h2').addClass('hidden')
-$('h3').addClass('hidden')
-	   $('.tab10').removeClass('hidden')},1000);
-     } 
-	else{
-	var audio = document.getElementById("audio2");
-       audio.play();
-	}   
-	   
-	   
+window.onload = function(e){ 
+	$("#sol").css("pointer-events", "none");
 }
+
 function solve() {
-$('#a1').val('This');
-$('#a2').val('These');
-$('#a3').val('These');
-$('#a4').val('This');
-
+	$('#submit').attr('disabled',true);
+	$("select").css("color","green");
+	$("select").css("border","1px solid green");
+	
+	let size = answers.length;
+	var i=0;
+	while(i<size){
+		$('#tab'+i).val(answers[i]).change();
+		i++;
+	}
 }
+
+function check() {
+	var C2A2_error = 0;
+	var C2A2_score = 0;
+	var C2A2_submit = 0;
+	$('select').css('border','1px solid');
+	$("#sol").css("pointer-events", "auto");	
+	let size = answers.length;
+	var i=0;
+	var empty=0;	
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer=='' || input_answer==null){
+			empty++;
+		}
+		i++;
+	}
+	if(empty==size){
+		$("#sol").css("pointer-events", "none");
+	}
+	var i=0;
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer!=answers[i]){
+			$('#tab'+i).css("border",'2px solid red');
+			C2A2_error++;
+			localStorage.setItem('C2A2_error', C2A2_error);
+		}
+		i++;
+	}
+	
+	var i=0;
+	var correct=0;
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer==answers[i]){
+			correct++;
+			C2A2_score++;
+			localStorage.setItem('C2A2_score', C2A2_score);
+		}
+		i++;
+	}
+	if(correct==size){
+		setTimeout(function(){
+			C2A2_submit++;
+			localStorage.setItem('C2A2_submit', C2A2_submit);
+			var audio = document.getElementById("audio1");
+			audio.play();
+			$('.main').addClass('hidden');
+			$('.well').removeClass('hidden');
+		},1000);
+		
+	}else{
+		var audio = document.getElementById("audio2");
+		audio.play();
+	}
+}
+
 </script>
 
 
