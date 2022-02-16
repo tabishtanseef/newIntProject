@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+
+body {
+	background-image: url('../../../img/b1.png');
+	background-attachment:fixed;
+}
+h2,h3 {
+	background:white;
+	margin-top: 10px;
+	border: 2px solid #156a93;
+	box-shadow:5px 5px 5px #156a93;
+	padding: 20px; 
+	border-radius:20px;
+	text-align: center;
+	font-weight: bold
+}
+.block {
+	display: block;
+	width:100%;
+	border: none;
+	margin-top: 5px;
+	border-radius:20px;
+	background: #97D0EC;
+	color:black;			
+	font-family: 'Roboto', sans-serif;
+	padding: 10px 24px;
+	font-size: 20px;
+	cursor: pointer;
+	text-align: center;
+}
+.tab1{
+	margin-top:20px;
+	padding:30px;
+	margin-bottom:50px;
+	font-family: 'Mukta', sans-serif;
+	background-image:url('../../../img/yellow.jpg');
+	box-shadow:5px 5px 5px #DD4803;
+	border:2px solid #DD4803;
+	width:80%;
+}
+.ques1{
+	border: 2px solid #156a93;
+    background:white;
+	margin: 20px;
+	border-radius:20px;
+	box-shadow:5px 5px 5px #156a93;
+	padding: 20px;
+	font-weight:bold;
+	font-size: 22px;
+}
+
+.hidden {
+	display: none
+}
+
+</style>
+</head>
+<body>
+<div class="container main">
+	<h3>SPELL WELL <br><br>Click on the correctly spelt word in each row.</h3>
+	<div class="ques1 ">
+		<div class="row">
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(1111)" id="wrong1111">rabit</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(111)" id="wrong111">rabitt</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(11)" id="wrong11">rabbitt</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="correct(1)" id="correct1">rabbit</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-3">
+				<button class="block" onclick="correct(2)" id="correct2">jungle</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(12)" id="wrong12">jungil</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(112)" id="wrong112">jangle</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(1112)" id="wrong1112">jungel</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(13)" id="wrong13">lazi</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="correct(3)" id="correct3">lazy</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(113)" id="wrong113">lazee</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(1113)" id="wrong1113">lazzy</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(1114)" id="wrong1114">suprise</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(114)" id="wrong114">supprise</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="correct(4)" id="correct4">surprise</button>
+			</div>
+			<div class="col-md-3">
+				<button class="block" onclick="wrong(14)" id="wrong14">saprise</button>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-4"><center><img id="" onclick="window.location.reload()" src="../../../img/res2.png" onmouseover="this.src='../../../img/res1.png'" onmouseout="this.src='../../../img/res2.png'" style="margin-top:10px; width:60%;"></center></div>
+			<div class="col-md-4"><center><img id="submit" onclick="check()" src="../../../img/sub2.png" onmouseover="this.src='../../../img/sub1.png'" onmouseout="this.src='../../../img/sub2.png'" style="margin-top:10px; width:60%;"></center></div>
+			<div class="col-md-4"><center><img id="sol"  onclick="solve()" src="../../../img/solu2.png" onmouseover="this.src='../../../img/solu1.png'" onmouseout="this.src='../../../img/solu2.png'" style="margin-top:10px; width:60%;"></center></div>
+		</div>
+	</div>
+	<br>
+</div>
+<div class="well hidden" >
+	<center> <img height="auto" width="100%" src="../../../english/Welldone.gif"></center>
+</div>
+<audio id="audio2" src="../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../english/well-done.mp3"></audio>
+<script>
+
+var C6A3_error = 0;
+var C6A3_score = 0;
+var C6A3_submit = 0;
+
+function play(a){
+	var audio = document.getElementById('s'+a);
+	audio.play();
+}
+
+function wrong(a) {
+	$('#wrong' + a).css('color', 'white');
+	$('#wrong' + a).css('background', 'red');
+	$('#wrong' + a).css('pointer-events', 'none');
+	C6A3_error++;
+	localStorage.setItem('C6A3_error', C6A3_error);
+	var audio = document.getElementById('audio2');
+	audio.play();
+}
+
+var i, j, k, l;
+
+function correct(a) {
+	b = a+10;
+	c = b+100;
+	d = c+1000;
+	$('#wrong' + b).css('pointer-events', 'none');
+	$('#wrong' + c).css('pointer-events', 'none');
+	$('#wrong' + d).css('pointer-events', 'none');
+	if(a==1){ i = 1;}
+	else if(a==2){ j = 1;}
+	else if(a==3){ k = 1;}
+	else { l = 1;}
+	var audio = document.getElementById('audio1');
+	audio.play();
+	$('#correct' + a).css('background', '#005b00');
+	$('#correct' + a).css('pointer-events', 'none'); 
+	$('#correct' + a).css('color', 'white'); 
+	C6A3_score++;
+	localStorage.setItem('C6A3_score', C6A3_score);
+}
+	
+function check(){
+	if(i == 1 && j == 1 && k == 1 && l == 1){
+		C6A3_submit++;
+		localStorage.setItem('C6A3_submit', C6A3_submit);
+		setTimeout(function(){
+			var audio = document.getElementById('audio1');
+			audio.play();
+			$('.main').addClass('hidden');
+			$('.well').removeClass('hidden');
+		},1000);
+	}
+	else{
+		var audio = document.getElementById('audio2');
+		audio.play();
+	}
+}
+
+function solve(){
+	$('#submit').css('pointer-events','none');
+	var i = 1;
+	while(i<=4){
+		$('#correct'+i).css('background','#005b00');$('#correct'+i).css('color', 'white'); 
+		i++;
+	}
+}
+
+ </script>
+</body>
+
+</html>

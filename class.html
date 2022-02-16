@@ -10,9 +10,53 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/login.css">
   <style>
-  .hidden{
-  display:none;
-  }
+body, html {
+  margin: 0;
+  overflow: hidden;
+  height:100%;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+.login-section-wrapper{
+	height:100%;
+	position: absolute;
+	top: 0px;
+	bottom: 0;
+	left: 0;
+	overflow-y: scroll; 
+}
+.second{
+height:100%;
+  background-color: #f1c40f;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
+ }
+
+.hidden{
+	display:none;
+}
+
+.top{
+position: -webkit-sticky; /* Safari & IE */
+position: sticky;
+top: 0;
+background:#fff;
+}
   /* From cssbuttons.io */
 .c-button {
  color: #000;
@@ -81,7 +125,7 @@
  transform: scale(1.4) translateY(0) translateZ(0);
 }
 li{
-	font-size:24px; 
+	font-size:20px; 
 	color:#06C8D9;
 }
 li a{
@@ -91,22 +135,20 @@ li a{
 </head>
 <body>
 <svg style="display: block; height: 0; width: 0;" version="1.1" xmlns="http://www.w3.org/2000/svg">
-				  <defs>
-					<filter id="goo">
-					  <feGaussianBlur result="blur" stdDeviation="10" in="SourceGraphic"></feGaussianBlur>
-					  <feColorMatrix result="goo" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" mode="matrix" in="blur"></feColorMatrix>
-					  <feBlend in2="goo" in="SourceGraphic"></feBlend>
-					</filter>
-				  </defs>
-				</svg>
+  <defs>
+	<filter id="goo">
+	  <feGaussianBlur result="blur" stdDeviation="10" in="SourceGraphic"></feGaussianBlur>
+	  <feColorMatrix result="goo" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" mode="matrix" in="blur"></feColorMatrix>
+	  <feBlend in2="goo" in="SourceGraphic"></feBlend>
+	</filter>
+  </defs>
+</svg>
   <main>
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-6 login-section-wrapper">
-			<center>
-				<img src="images/logog.png" style="width:70%; margin:30px 0px;"><br><br>
-			</center>
-			<div class="row">
+			<div class="row top">
+				<center><img src="images/logog.png" style="width:70%; margin:30px 0px;"><br><br></center>
 				<div class="col-sm-6">
 					<center>
 					<button class="c-button c-button--gooey" onclick="go(1)"> Class 1
@@ -129,32 +171,49 @@ li a{
 					</button>
 					</center>
 				</div>
+			</div>
+			<div class="row">
 				<div class="col-sm-12 class1 hidden">
 					<h2 style="margin-top:50px;">Class 1</h2><br>
 					<ol>
-						<li><a href="class-1/Pati and Pip/index.html">Pati and Pip</a></li>
-						<li><a href="class-1/We Share a Room/index.html">We Share a Room</a></li>
-						<li><a href="class-1/Oh My! Look at the Sky/index.html">Oh My! Look at the Sky</a></li>
-						<li><a href="class-1/Jumbo and Monti/index.html">Jumbo and Monti</a></li>
-						<li><a href="class-1/Class I is Going on a Picnic/index.html">Class I is Going on a Picnic</a></li>
-						<li><a href="class-1/Mr Slow, the Tortoise and Speedy, the Hare/index.html">Mr Slow, the Tortoise and Speedy, the Hare</a></li>
+						<li><a href="class-1/1. Pati and Pip/index.html">Pati and Pip</a></li>
+						<li><a href="class-1/2. We Share a Room/index.html">We Share a Room</a></li>
+						<li><a href="class-1/3. Oh My! Look at the Sky/index.html">Oh My! Look at the Sky</a></li>
+						<li><a href="class-1/4. Jumbo and Monti/index.html">Jumbo and Monti</a></li>
+						<li><a href="class-1/5. Class I is Going on a Picnic/index.html">Class I is Going on a Picnic</a></li>
+						<li><a href="class-1/6. Mr Slow, the Tortoise and Speedy, the Hare/index.html">Mr Slow, the Tortoise and Speedy, the Hare</a></li>
+						<li><a href="class-1/7. Big Tom/index.html">Big Tom</a></li>
+						<li><a href="class-1/8. We are a family/index.html">We are a family</a></li>
+						<li><a href="class-1/9. Tiana and Roger’s Friends/index.html">Tiana and Roger’s Friends</a></li>
+						<li><a href="class-1/10. The Garden/index.html">The Garden</a></li>
+						<li><a href="class-1/11. Having Fun in the Park/index.html">Having Fun in the Park</a></li>
+						<li><a href="class-1/12. All About me/index.html">All About me</a></li>
+						<li><a href="class-1/13. The Aidans’ House/index.html">The Aidans’ House</a></li>
+						<li><a href="class-1/14. My Blue School Bag/index.html">My Blue School Bag</a></li>
+						<li><a href="class-1/15. Eat Well Stay Well/index.html">Eat Well Stay Well</a></li>
+						<li><a href="class-1/16. I'm Older now/index.html">I'm Older now</a></li>
+						<li><a href="class-1/17. The Jungle is Our Home/index.html">The Jungle is Our Home</a></li>
+						<li><a href="class-1/18. Tim and the Dentist/index.html">Tim and the Dentist</a></li>
+						<li><a href="class-1/19. Tiana’s Birthday Party/index.html">Tiana’s Birthday Party</a></li>
+						<li><a href="class-1/20. A day at the farm/index.html">A day at the farm</a></li>
+						<li><a href="class-1/21. Who Will Bell The cat?/index.html">Who Will Bell The cat?</a></li>
 					</ol>
 				</div>
 				<div class="col-sm-12 class2 hidden">
 					<h2 style="margin-top:50px;">Class 2</h2><br>
 					<ol>
-						<li><a href="class-1/Pati and Pip/index.html">Pati and Pip</a></li>
-						<li><a href="class-1/We Share a Room/index.html">We Share a Room</a></li>
-						<li><a href="class-1/Oh My! Look at the Sky/index.html">Oh My! Look at the Sky</a></li>
-						<li><a href="class-1/Jumbo and Monti/index.html">Jumbo and Monti</a></li>
-						<li><a href="class-1/Class I is Going on a Picnic/index.html">Class I is Going on a Picnic</a></li>
-						<li><a href="class-1/Mr Slow, the Tortoise and Speedy, the Hare/index.html">Mr Slow, the Tortoise and Speedy, the Hare</a></li>
+						<li><a href="class-1/1. Pati and Pip/index.html">1. Pati and Pip</a></li>
+						<li><a href="class-1/2. We Share a Room/index.html">We Share a Room</a></li>
+						<li><a href="class-1/3. Oh My! Look at the Sky/index.html">Oh My! Look at the Sky</a></li>
+						<li><a href="class-1/4. Jumbo and Monti/index.html">Jumbo and Monti</a></li>
+						<li><a href="class-1/5. Class I is Going on a Picnic/index.html">Class I is Going on a Picnic</a></li>
+						<li><a href="class-1/6. Mr Slow, the Tortoise and Speedy, the Hare/index.html">Mr Slow, the Tortoise and Speedy, the Hare</a></li>
 					</ol>
 				</div>
 				
 			</div>
         </div>
-        <div class="col-sm-6 px-0 d-none d-sm-block">
+        <div class="col-sm-6 px-0 d-none d-sm-block second">
           <img src="assets/images/login2.jpg" alt="login image" class="login-img">
         </div>
       </div>

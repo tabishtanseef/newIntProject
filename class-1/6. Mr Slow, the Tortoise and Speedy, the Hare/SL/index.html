@@ -87,35 +87,12 @@ img{
 	margin-top:10px;
 	font-size:20px;
 }
-@media only screen and (max-device-width: 480px) {
-      img{
-	  height:auto;
-	  width:100%;
-	  margin-top:50px;
-	  }
-	  #dim{
-	  padding:0px;
-	  text-align:left;
-	  width:100%;
-	  font-size:24px;
-	   margin-top:40px;
-	   font-size:20px;
-	   
-	  }
-	  h2{
-	  margin-top:50px;
-	  }
-    }
-
-@media only screen and (min-device-width: 481px) {
-   
-}
 </style>
   
   </head>
 <body>
 
-<div class="tab1">
+<div class="main">
 <h2>SMART LANGUAGE</h2>
 <h3>Click on the correct place words.</h3>
 <br>
@@ -164,11 +141,11 @@ img{
 		</div>
 		
 		<div class="col-sm-4">
-			<button class="button" id="submit" onclick="go()" ><span>Submit </span></button>
+			<button class="button" onclick="check()" id="submit" ><span>Submit </span></button>
 		</div>
 
 		<div class="col-sm-4">
-			<button class="button" onclick="show()"><span>Answer Key </span></button>
+			<button class="button" onclick="solve()" id="sol"><span>Answer Key </span></button>
 		</div>
 	</div>
 </div>
@@ -177,15 +154,15 @@ img{
 <br>
 <br>
 
-<div class="tab4 hidden">
+<div class="well hidden">
 <img src="../../../english/Welldone.gif" width="100%" height="auto">
 </div>
 <audio id="audio2" src="../../../english/try-again.mp3"></audio>
 <audio id="audio1" src="../../../english/well-done.mp3"></audio>
 
 <script>
-var count = 0;
 
+var count = 0;
 
 var C6A2_error = 0;
 var C6A2_score = 0;
@@ -214,10 +191,10 @@ function wrong(a){
 	var audio = document.getElementById("audio2");
 	audio.play();
 }
-function go() {
+function check() {
 	if(C6A2_score==7){
-		$('.tab1').addClass('hidden')
-		$('.tab4').removeClass('hidden')
+		$('.main').addClass('hidden')
+		$('.well').removeClass('hidden')
 		var audio = document.getElementById("audio1");
 		audio.play();
 		C6A2_submit++;
@@ -229,7 +206,7 @@ function go() {
 	}
 }
 
-function show(){
+function solve(){
 	$('#submit').css('pointer-events','none');
 	a=1;
 	while(a<8){
@@ -242,9 +219,7 @@ function show(){
 	}
 }
 
-
 </script>
-
 
 </body>
 </html>

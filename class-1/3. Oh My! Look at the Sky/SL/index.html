@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+
+body{
+	background-image:url('../../../img/yellow.jpg');
+	background-attachment:fixed;
+}
+.container{
+	background:#ffffff8f;
+	border:5px solid white;
+	border-radius:20px;
+	padding:20px;
+}
+h2, h3{
+	text-align:center;
+	background-color: #ffffff8f;
+	font-family:roboto ;
+	padding:10px;
+}
+img{
+	width:100%;
+	height:auto;
+}
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+	margin-left:30px;
+    background-color: #ffffff;
+	font-family:Comic Sans, Comic Sans MS, cursive;
+    padding: 14px 28px;
+    font-size: 26px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+	display:none;
+}
+.button {
+    position: relative;
+    background-color: #009b1f;
+    border: none;
+    font-size: 28px;
+	font-family: CAC Moose;
+	margin-left:44px;
+    color: #FFFFFF;
+    padding: 1px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+#dim{
+	margin-top:5px;
+	font-family:Comic Sans, Comic Sans MS, cursive;
+	font-size:20px;
+
+}  
+    
+</style>
+  
+  </head>
+<body>
+
+<div class="main">
+<h2>SMART LANGUAGE</h2>
+<h3>Click on the correct describing words.</h3>
+<br>
+<div class="container">
+	<div class="row" id="dim">
+		<div class="col-sm-10"  >
+		1.&nbsp; The grass is <span id="1" onclick="correct(this.id)">green</span>/<span id="11" onclick="wrong(this.id)">red</span>. <hr class="dashed">
+		</div>
+	</div>
+	
+	<div class="row" id="dim" >
+		<div class="col-sm-10" >
+		2.&nbsp; The sun is <span id="2" onclick="correct(this.id)">hot</span>/<span id="12" onclick="wrong(this.id)">cold</span>. <hr class="dashed">
+		</div>
+	</div>
+	
+	<div class="row" id="dim" >
+		<div class="col-sm-10" >
+		3.&nbsp; Monkeys have <span id="13" onclick="wrong(this.id)">short</span>/<span id="3" onclick="correct(this.id)" >long</span> tails. <hr class="dashed">
+		</div>
+	</div>
+	
+	<div class="row" id="dim"  >
+		<div class="col-sm-10"  >
+		4.&nbsp; Elephants are <span id="14" onclick="wrong(this.id)" >small</span>/<span id="4" onclick="correct(this.id)" >big</span> animals.<hr class="dashed">
+		</div>
+	</div>
+	
+	<div class="row" id="dim"  >
+		<div class="col-sm-10"  >
+		5.&nbsp; The sky is <span id="5" onclick="correct(this.id)">blue</span>/<span id="15" onclick="wrong(this.id)">green</span>.  <hr class="dashed">
+		</div>
+	</div>
+	
+	<div class="row" >
+		<div class="col-sm-4">
+		<button class="button"  onclick="location.reload()"><span>Reset </span></button>
+		</div>
+		
+		<div class="col-sm-4">
+		<button class="button" onclick="check()" id="submit" ><span>Submit </span></button>
+		</div>
+
+		<div class="col-sm-4">
+		<button class="button" onclick="solve()" id="sol"><span>Answer Key </span></button>
+		</div>
+	</div>
+</div>
+</div>
+
+<br>
+<br>
+
+<div class="well hidden">
+	<img src="../../../english/Welldone.gif" height="auto" width="100%">
+</div>
+
+<audio id="audio2" src="../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../english/well-done.mp3"></audio>
+
+
+<script>
+var count = 0;
+
+var C3A2_error = 0;
+var C3A2_score = 0;
+var C3A2_submit = 0;
+
+
+function correct(a){
+	w = parseInt(a)+10;
+	b = parseInt(a)+1;
+	$('#'+w).css('pointer-events','none');
+	$('#'+a).css('pointer-events','none');
+	$('#'+a).css('background-color','green');
+	$('#'+a).css('color','white');
+	C3A2_score++;
+	localStorage.setItem('C3A2_score', C3A2_score);
+	var audio = document.getElementById("audio1");
+	audio.play();
+}
+
+function wrong(a){
+	$('#'+a).css('pointer-events','none');
+	$('#'+a).css('background-color','red');
+	$('#'+a).css('color','white');
+	C3A2_error++;
+	localStorage.setItem('C3A2_error', C3A2_error);
+	var audio = document.getElementById("audio2");
+	audio.play();
+}
+function check() {
+	if(C3A2_score==5){
+		$('.main').addClass('hidden')
+		$('.well').removeClass('hidden')
+		var audio = document.getElementById("audio1");
+		audio.play();
+		C3A2_submit++;
+		localStorage.setItem('C3A2_submit', C3A2_submit);
+	}
+	else{
+		var audio = document.getElementById("audio2");
+		audio.play();
+	}
+}
+
+function solve(){
+	$('#submit').css('pointer-events','none');
+	a=1;
+	while(a<6){
+		w = parseInt(a)+10;
+		$('#'+w).css('pointer-events','none');
+		$('#'+a).css('pointer-events','none');
+		$('#'+a).css('background-color','green');
+		$('#'+a).css('color','white');
+		a++;
+	}
+}
+
+</script>
+
+</body>
+</html>
