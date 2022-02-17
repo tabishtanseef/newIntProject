@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+
+body{
+	background-image:url('audio/one.jpg');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+}
+table{
+	background-color:#0071B2;
+}
+h2{
+	text-align:center;
+	background-image: linear-gradient(to right, #f9ff9f96 , #f9ff9f96);
+	text-align:center;
+	padding:10px;
+	width:80%;
+	border:2px solid  #FEA500;
+	border-radius:20px;
+	margin-top:10px;
+}
+select{
+	margin-top:10px;
+}
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #99e5ff;
+    padding: 14px 28px;
+    font-size: 20px;
+	margin-top:10px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+	display:none;
+}
+
+#dim{
+	margin:20px;
+	font-size:20px;
+}
+@media only screen and (max-device-width: 480px) {
+img{
+	height:auto;
+	width:100%;
+	margin-top:30px;
+}  
+    }
+
+@media only screen and (min-device-width: 481px) {
+       
+    }
+.container{
+	background-image:url('audio/bg.jpg');
+	padding:30px;
+	border:2px solid #99e5ff;
+	box-shadow:2px 2px 2px #99e5ff;
+	border-radius:20px;
+}
+
+</style>
+  
+  </head>
+<body>
+
+<div class="tab1">
+<center>
+<h2>GRAMMAR</h2>
+<h2 >Choose either is or are to complete these sentences.</h2></center>
+<br>
+
+<div class="container" >		
+	<div class="row" id="dim"  >
+	<div class="col-md-12"  >
+	 1.&nbsp; &nbsp; Ants <select id="first"><option selected disabled>     </option><option>is</option><option>are</option></select> busy insects. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  are</span> 
+	
+	</div>
+	</div>
+	<div class="row" id="dim"   >
+	<div class="col-md-12">
+	 2.&nbsp; &nbsp; An umbrella <select id="firs"><option selected disabled>     </option><option>is</option><option>are</option></select> useful on rainy day. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  is</span> 
+	
+	</div>
+	</div>
+	<div class="row" id="dim"   >
+	<div class="col-md-12">
+	 3.&nbsp; &nbsp; Madhu's Dad <select id="fir"><option selected disabled> </option><option>is</option><option>are</option></select> a pilot. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  is</span> 
+	
+	</div>
+	</div>
+	<div class="row" id="dim"   >
+	<div class="col-md-12">
+	 4.&nbsp; &nbsp; The children <select id="fi"><option selected disabled>     </option><option>are</option><option>is</option></select> happy when it rains. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  are</span> 
+	
+	</div>
+	</div>
+	<div class="row" id="dim"   >
+	<div class="col-md-12">
+	 5.&nbsp; &nbsp; Apples <select id="f"><option selected disabled>     </option><option>is</option><option>are</option></select> good for us. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  are</span> 
+	
+	</div>
+	</div>
+    
+	<div class="row" id="dim"   >
+	<div class="col-md-12">
+	 6.&nbsp; &nbsp; My older brother <select id="q"><option selected disabled>     </option><option>are</option><option>is</option></select> ten. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  is</span> 
+	
+	</div>
+	</div>
+    	
+	<div class="row" >
+	<div class="col-md-4">
+	<button class="block"   onclick="ho()"><span>Reset </span></button>
+	</div>
+	
+	<div class="col-md-4">
+	<button class="block" id="ss" onClick="go()" ><span>Submit </span></button>
+	</div>
+
+	<div class="col-md-4">
+	<button class="block" onClick="show()"><span>Answer Key </span></button>
+	</div>
+	</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<div class="tab4 hidden">
+<img  width="100%" height="auto" src="../../../../english/Welldone.gif">
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+<script>
+
+function ho() {
+	window.location="index.html"
+}
+function show() {
+ 
+	$('span').removeClass('hidden')
+
+}
+function go() {
+ var a1 = document.getElementById("first");
+ var a2 = document.getElementById("firs");
+ var a3 = document.getElementById("fir");
+ var a4 = document.getElementById("fi");
+ var a5 = document.getElementById("f");
+ var a6 = document.getElementById("q");
+
+
+
+var ans1 = a1.options[a1.selectedIndex].text;
+var ans2 = a2.options[a2.selectedIndex].text;
+var ans3= a3.options[a3.selectedIndex].text;
+var ans4= a4.options[a4.selectedIndex].text;
+var ans5= a5.options[a5.selectedIndex].text;
+var ans6= a6.options[a5.selectedIndex].text;
+
+
+
+if(ans1=="are" && ans2=="is" && ans3=="is" && ans4=="are" && ans5=="are" && ans6=="is"){
+
+var audio = document.getElementById("audio1");
+	audio.play();
+	$('.tab1').addClass('hidden')
+	$('.tab4').removeClass('hidden')
+}
+else{
+
+var audio = document.getElementById("audio2");
+    audio.play();
+}
+}
+
+function show() {
+$("#ss").css("pointer-events", "none");
+	$('#first').val('are');
+	$('#firs').val('is');
+	$('#fir').val('is');
+	$('#fi').val('are');
+	$('#f').val('are');
+	$('#q').val('is');
+}
+
+
+</script>
+
+</body>
+</html>

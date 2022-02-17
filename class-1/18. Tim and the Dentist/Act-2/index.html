@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	
+<style>
+
+body{
+	background-image:url('audio/one.jpg');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	background-attachment:fixed;
+}
+.container{
+	background-image:url('audio/bg.jpg');
+	padding:30px;
+	border:2px solid #99e5ff;
+	box-shadow:2px 2px 2px #99e5ff;
+	border-radius:20px;
+}
+h2{
+	text-align:center;
+	background-image: linear-gradient(to right, rgba(224, 255, 255, 0.5) , rgba(0, 0, 235, 0));
+	padding:10px;
+	margin-top:10px;
+}
+h3{
+	text-align:center;
+	padding:10px;
+	background-image: linear-gradient(to right, rgba(224, 255, 255, 0.5) , rgba(0, 0, 235, 0));
+}
+select{
+	margin-top:10px;
+}
+img{
+	width:100%;
+	height:auto;
+}
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #99e5ff;
+    padding: 14px 28px;
+	margin-top:10px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+	display:none;
+}
+
+#dim{
+	margin-top:10px;
+	font-size:20px;
+}
+@media only screen and (max-device-width: 480px) {
+img{
+	height:auto;
+	width:100%;
+	margin-top:50px;
+}
+	}
+@media only screen and (min-device-width: 481px) {
+       
+    }
+</style>
+  
+  </head>
+<body>
+
+<div class="tab1">
+<h2>GRAMMAR</h2>
+<h3>Spot the action words and adverbs in these sentences.</h3>
+<br>
+<div class="container">
+	<div class="row" id="dim">
+	<div class="col-md-12"  >
+	 1.&nbsp; &nbsp; Mom <span id="mon1" onclick="mon1()">smiled</span> <span id="happy1" onclick="happy1()">happily</span>. <hr>
+	
+	</div>
+	</div>
+	<div class="row" id="dim" >
+	<div class="col-md-12">
+	 2.&nbsp; &nbsp; Hari <span id="mon2" onclick="mon2()">ran</span> <span id="happy2" onclick="happy2()">quickly</span>. <hr>
+	
+	</div>
+	</div>
+	<div class="row" id="dim"  >
+	<div class="col-md-12">
+	 3.&nbsp; &nbsp; Sam <span id="mon3" onclick="mon3()">climbed</span> the tree <span id="happy3" onclick="happy3()">carefully</span>. <hr>
+	
+	</div>
+	</div>
+	<div class="row" id="dim"  >
+	<div class="col-md-12">
+	 4.&nbsp; &nbsp; The monkey <span id="mon4" onclick="mon4()">chattered</span> <span id="happy4" onclick="happy4()">noisily</span>. <hr>
+	
+	</div>
+	</div>
+	
+	<div class="row" id="dim"  >
+	<div class="col-md-12">
+	 5.&nbsp; &nbsp; The man <span id="mon5" onclick="mon5()">shouted</span> <span id="happy5" onclick="happy5()">angrily</span>.  <span style="color:green; font-weight:bold;" class="hidden">&nbsp; &nbsp;  hot</span><hr>
+	
+	</div>
+	</div>
+	
+	<div class="row" >
+	<div class="col-md-4">
+	<button class="block"   onclick="ho()"><span>Reset </span></button>
+	</div>
+	
+	<div class="col-md-4">
+	<button class="block" onclick="go()" ><span>Submit </span></button>
+	</div>
+
+	<div class="col-md-4">
+	<button class="block" onclick="show()"><span>Answer Key </span></button>
+	</div>
+	</div>
+</div>
+</div>
+
+<br><br><br>
+
+<div class="tab4 hidden">
+	<img src="../../../../english/Welldone.gif" width="100%" height="auto">
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+<script>
+
+var count = 0;
+function ho() {
+ 
+window.location="index.html"
+}
+function mon1() {
+	$('#mon1').css("background-color", "yellow");
+	count++;
+}
+function mon2() {
+	$('#mon2').css("background-color", "yellow");count++;
+}
+function mon3() {
+	$('#mon3').css("background-color", "yellow");count++;
+}
+function mon4() {
+	$('#mon4').css("background-color", "yellow");count++;
+}
+function mon5() {
+	$('#mon5').css("background-color", "yellow");count++;
+}
+function happy1() {
+	$('#happy1').css("background-color", "red");count++;
+	$('#happy1').css("color", "white");
+}
+function happy2() {
+	$('#happy2').css("background-color", "red");count++;
+	$('#happy2').css("color", "white");
+}
+function happy3() {
+	$('#happy3').css("background-color", "red");count++;
+	$('#happy3').css("color", "white");
+}
+function happy4() {
+	$('#happy4').css("background-color", "red");count++;
+	$('#happy4').css("color", "white");
+}
+function happy5() {
+	$('#happy5').css("background-color", "red");count++;
+	$('#happy5').css("color", "white");
+}
+function show() {
+	$('#mon1').css("background-color", "yellow");
+	$('#mon2').css("background-color", "yellow");
+	$('#mon3').css("background-color", "yellow");
+	$('#mon4').css("background-color", "yellow");
+	$('#mon5').css("background-color", "yellow");
+	$('#mon5').css("background-color", "yellow");
+	$('#happy1').css("background-color", "red");
+	$('#happy1').css("color", "white");
+	$('#happy2').css("background-color", "red");
+	$('#happy2').css("color", "white");
+	$('#happy3').css("background-color", "red");
+	$('#happy3').css("color", "white");
+	$('#happy4').css("background-color", "red");
+	$('#happy4').css("color", "white");
+	$('#happy5').css("background-color", "red");
+	$('#happy5').css("color", "white");
+}
+function go() {
+if(count>=10){
+ var audio = document.getElementById("audio1");
+    audio.play();
+
+	$('.tab1').addClass('hidden')
+	$('.tab4').removeClass('hidden')
+}
+else{
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+}
+
+</script>
+
+
+</body>
+</html>

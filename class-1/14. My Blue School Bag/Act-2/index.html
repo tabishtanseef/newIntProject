@@ -1,0 +1,585 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	
+<style>
+
+body{
+	background-image:url('items/bg.jpg');
+	background-attachment:fixed;
+	background-position:cover;
+}
+h2{
+	width:90%;
+	border:2px solid  #FEA500;
+	border-radius:20px;
+	box-shadow:2px 2px 2px  #FEA500;
+	text-align:center;
+	padding:10px;
+	margin-top:10px;
+	background-color:#FEA500;
+}
+h4{
+	background-color:#FEA500;
+	width:90%;
+	border:2px solid  #FEA500;
+	border-radius:20px;
+	box-shadow:2px 2px 2px  #FEA500;
+	text-align:center;
+	padding:10px;
+	margin-top:10px;
+}
+.block {
+    display: block;
+    width: 70%;
+    border: none;
+    background-color: #ffffff8f;
+    padding: 14px 28px;
+    font-size: 22px;
+	margin:10px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+	display:none;
+}
+.sr{
+	padding:20px; 
+	margin-top:10px;
+	border:2px solid;
+	border-radius:20px;
+	background: rgb(238,160,2);
+	background: linear-gradient(205deg, rgba(238,160,2,1) 4%, rgba(255,196,0,1) 88%, rgba(215,255,0,1) 100%);
+}
+@media only screen and (max-device-width: 480px) {
+video{
+	width:100%;
+}
+img{
+	height:auto;
+	width:100%;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+#dim{
+	padding:0px;
+	text-align:center;
+	width:100%;
+	font-size:22px;
+	margin-top:10px;
+}
+h2{
+	margin-top:20px;
+}
+	}
+@media only screen and (min-device-width: 481px) {
+        
+    }
+
+</style>
+</head>
+<body>
+<div class="srk">
+
+<center>
+<h2>GRAMMAR</h2>
+<h4>Choose the correct options to fill in the blanks.</h4>
+</center>
+
+<br>
+
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+	<center><video width="50%" controls allow="autoplay" src="audio/ch.mp4" id="tt"></video></center>
+</div>
+</div>
+</div>
+
+<center>
+
+<div class="container sr hidden">
+	<div class="row">
+		
+		<div class="col-md-12">
+			<div class="tab1">
+				<div class="container">
+					<div class="row" >
+					<div class="col-md-12">
+					<img width="40%" src="items/bed.png">
+					<br>
+					<div class="cor1" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Do you have a doll in  your bag?
+					<br> No, I ______ a doll in my bag.</div>
+					<div class="wor1 hidden" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Do you have a doll in  your bag?
+					<br> No, I <span style="color:red;"> do not have </span> a doll in my bag.</div>
+					<br>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="correct1" onClick="correct1()">do not have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim" >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong1" onClick="wrong1()">do have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong2" onClick="wrong2()">does have</button></center>
+					<br>
+					</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="extra">
+				<div class="tab2 hidden">
+				<div class="container">
+					<div class="row" >
+					<div class="col-md-12">
+					<img width="40%" src="items/bin.png">
+					<br>
+					<div class="cor2" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Do you have a ruler in your bag?
+					<br>Yes, I ________ a ruler in my bag.</div>
+					<div class="wor2 hidden" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Do you have a ruler in your bag?
+					<br>Yes, I <span style="color:red;"> do have </span> a ruler in my bag.</div>
+					<br>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong4" onClick="wrong4()">does have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim" >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong3" onClick="wrong3()">do not have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="correct2" onClick="correct2()">do have</button></center>
+					<br>
+					</div>
+					</div>
+				</div>
+				</div>
+				</div>
+
+				<div class="extra2">
+				<div class="tab3 hidden">
+				<div class="container">
+					<div class="row" >
+					<div class="col-md-12">
+					<img width="40%" src="items/dog.png">
+					<br>
+					<div class="cor3" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Do you have a lunch box in your bag?
+					<br>Yes, I _______ a lunch box in my bag.</div>
+					<div class="wor3 hidden" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Do you have a lunch box in your bag?
+					<br>Yes, I <span style="color:red;"> do have </span> a lunch box in my bag.</div>
+					<br>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong5" onClick="wrong5()">does not have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim" >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong6" onClick="wrong6()">does have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="correct3" onClick="correct3()">do have</button></center>
+					<br>
+					</div>
+					</div>
+				</div>
+				</div>
+				</div>
+
+				<div class="extra3">
+				<div class="tab4 hidden">
+				<div class="container">
+					<div class="row" >
+					<div class="col-md-12">
+					<img width="40%" src="items/hen.png">
+					<br>
+					<div class="cor4" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Does the teacher have a pen in her hand?
+					<br>The teacher ________ a pen in her hand.</div>
+					<div class="wor4 hidden" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Does the teacher have a pen in her hand?
+					<br>The teacher <span style="color:red;"> does not have </span> a pen in her hand.</div>
+					<br>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong7" onClick="wrong7()">do have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim" >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong8" onClick="wrong8()">does have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="correct4" onClick="correct4()">does not have</button></center>
+					<br>
+					</div>
+					</div>
+				</div>
+				</div>
+				</div>
+
+				<div class="extra4">
+				<div class="tab5 hidden">
+				<div class="container">
+					<div class="row" >
+					<div class="col-md-12">
+					<img width="40%" src="items/man.png">
+					<br>
+					<div class="cor5" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Does the flower have five petals?
+					<br>The flower _______ five petals.</div>
+					<div class="wor5 hidden" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Does the flower have five petals?
+					<br>The flower <span style="color:red;"> does have </span> five petals.</div>
+					<br>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong9" onClick="wrong9()">do have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim" >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="correct5" onClick="correct5()">does have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong10" onClick="wrong10()">does not have</button></center>
+					<br>
+					</div>
+					</div>
+				</div>
+				</div>
+				</div>
+
+				<div class="extra5">
+				<div class="tab6 hidden">
+				<div class="container">
+					<div class="row" >
+					<div class="col-md-12">
+					<img width="40%" src="items/pen.png">
+					<br>
+					<div class="cor6" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Does the basket have a handle?
+					<br>The basket _______ a handle.</div>
+					<div class="wor6 hidden" style="font-size:20px; font-family:Comic Sans, Comic Sans MS, cursive;">Does the basket have a handle?
+					<br>The basket <span style="color:red;"> does have </span> a handle.</div>
+					<br>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="correct6" onClick="correct6()">does have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim" >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong11" onClick="wrong11()">does not have</button></center>
+					</div>
+					</div>
+					<div class="row" id="dim"  >
+					<div class="col-md-12">
+					<center><button type="button" class="block" id="wrong12" onClick="wrong12()">do have</button></center>
+					<br>
+					</div>
+					</div>
+				</div>
+				</div>
+				</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<br><br><br>
+
+<div class="tab7 hidden">
+	<img src="../../../../english/Welldone.gif" width="100%" height="auto">
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+</center>
+
+<script>
+
+function updateCurrentTime() 
+{
+var x = document.getElementById("tt");
+
+console.log(x.currentTime);
+
+if(x.currentTime==x.duration){
+$('.sr').removeClass('hidden')
+$('#tt').addClass('hidden')
+
+}
+
+}
+	
+window.onload = function(){ 
+	setInterval(function()
+	{
+		updateCurrentTime();
+	},1000);
+}
+
+function correct1() {
+ var a1 = document.getElementById("correct1");
+ var a2 = document.getElementById("wrong1");
+ var a3 = document.getElementById("wrong2");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor1').addClass('hidden')
+	$('.wor1').removeClass('hidden')
+setInterval(function(){ 
+	$('.tab1').addClass('hidden')
+	$('.tab2').removeClass('hidden')},2000);
+}
+
+function wrong1() {
+ var a1 = document.getElementById("correct1");
+ var a2 = document.getElementById("wrong1");
+ var a3 = document.getElementById("wrong2");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong2() {
+ var a1 = document.getElementById("correct1");
+ var a2 = document.getElementById("wrong1");
+ var a3 = document.getElementById("wrong2");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct2() {
+ var a1 = document.getElementById("correct2");
+ var a2 = document.getElementById("wrong3");
+ var a3 = document.getElementById("wrong4");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor2').addClass('hidden')
+	$('.wor2').removeClass('hidden')
+setInterval(function(){ 
+	$('.extra').addClass('hidden')
+	$('.tab3').removeClass('hidden')},2000);
+}
+
+function wrong3() {
+ var a1 = document.getElementById("correct2");
+ var a2 = document.getElementById("wrong3");
+ var a3 = document.getElementById("wrong4");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong4() {
+ var a1 = document.getElementById("correct2");
+ var a2 = document.getElementById("wrong3");
+ var a3 = document.getElementById("wrong4");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct3() {
+ var a1 = document.getElementById("correct3");
+ var a2 = document.getElementById("wrong5");
+ var a3 = document.getElementById("wrong6");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor3').addClass('hidden')
+	$('.wor3').removeClass('hidden')
+setInterval(function(){ 
+	$('.extra2').addClass('hidden')
+	$('.tab4').removeClass('hidden')},2000);
+}
+
+function wrong5() {
+ var a1 = document.getElementById("correct3");
+ var a2 = document.getElementById("wrong5");
+ var a3 = document.getElementById("wrong6");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong6() {
+ var a1 = document.getElementById("correct3");
+ var a2 = document.getElementById("wrong5");
+ var a3 = document.getElementById("wrong6");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct4() {
+ var a1 = document.getElementById("correct4");
+ var a2 = document.getElementById("wrong7");
+ var a3 = document.getElementById("wrong8");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor4').addClass('hidden')
+	$('.wor4').removeClass('hidden')
+setInterval(function(){ 
+	$('.extra3').addClass('hidden')
+	$('.tab5').removeClass('hidden')},2000);
+}
+
+function wrong7() {
+ var a1 = document.getElementById("correct4");
+ var a2 = document.getElementById("wrong7");
+ var a3 = document.getElementById("wrong8");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong8() {
+ var a1 = document.getElementById("correct4");
+ var a2 = document.getElementById("wrong7");
+ var a3 = document.getElementById("wrong8");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct5() {
+ var a1 = document.getElementById("correct5");
+ var a2 = document.getElementById("wrong9");
+ var a3 = document.getElementById("wrong10");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor5').addClass('hidden')
+	$('.wor5').removeClass('hidden')
+	setInterval(function(){ 
+	$('.extra4').addClass('hidden')
+	$('.tab6').removeClass('hidden')},2000);
+}
+function wrong9() {
+ var a1 = document.getElementById("correct5");
+ var a2 = document.getElementById("wrong9");
+ var a3 = document.getElementById("wrong10");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong10() {
+ var a1 = document.getElementById("correct5");
+ var a2 = document.getElementById("wrong9");
+ var a3 = document.getElementById("wrong10");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+} 
+
+function correct6() {
+ var a1 = document.getElementById("correct6");
+ var a2 = document.getElementById("wrong11");
+ var a3 = document.getElementById("wrong12");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor6').addClass('hidden')
+	$('.wor6').removeClass('hidden')
+setInterval(function(){ 
+	$('.extra5').addClass('hidden')
+	$('h2').addClass('hidden')
+	$('h4').addClass('hidden')
+	$('.srk').addClass('hidden')
+	$('.container').addClass('hidden')
+	$('.tab7').removeClass('hidden')},2000);
+}
+function wrong11() {
+ var a1 = document.getElementById("correct6");
+ var a2 = document.getElementById("wrong11");
+ var a3 = document.getElementById("wrong12");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong12() {
+ var a1 = document.getElementById("correct6");
+ var a2 = document.getElementById("wrong11");
+ var a3 = document.getElementById("wrong12");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}  
+
+</script>
+
+</body>
+</html>

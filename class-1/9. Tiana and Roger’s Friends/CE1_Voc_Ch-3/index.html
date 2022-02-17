@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+
+body{
+	background-color:#C4F20D;
+	background-attachment:fixed;
+	background-position:cover;
+}
+h2{
+	padding:10px;
+	text-align:center;
+	background-color:#FBBC00;
+	margin-top:10px;
+}
+select{
+	margin-top:10px;
+}
+.block {
+    display: block;
+    width: 70%;
+    border: none;
+    background-color: #89B85D;
+    padding: 12px 28px;
+    font-size: 22px;
+	margin:10px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+	display:none;
+}
+.container{
+	padding:20px; 
+	margin-top:10px;
+	border:2px solid;
+	border-radius:20px;
+	background: rgb(238,160,2);
+	background: linear-gradient(205deg, rgba(238,160,2,1) 4%, rgba(255,196,0,1) 88%, rgba(215,255,0,1) 100%);
+}
+#dim{
+	margin-top:10px;
+	font-size:24px;
+}
+
+</style>
+  
+  </head>
+<body>
+
+<div class="tab1">
+<h2>VOCABULARY</h2>
+<h2>Choose the correct option and complete the word.</h2>
+<br>
+<div class="container">
+	<div class="row" id="dim">
+	<div class="col-md-6"  >
+	 1.&nbsp; &nbsp; b<select id="first"><option selected disabled>     </option><option>as</option><option>es</option><option>is</option></select>ket <span style="color:green; font-weight:bold;" class="hidden">&nbsp; &nbsp;  Basket</span><hr class="dashed">
+	</div>
+	
+	<div class="col-md-6">
+	 2.&nbsp; &nbsp; s<select id="firs"><option selected disabled>     </option><option>an</option><option>es</option><option>en</option></select>dc<select id="f"><option selected disabled>     </option><option>an</option><option>as</option><option>es</option></select>tle<span style="color:green; font-weight:bold;" class="hidden">&nbsp; &nbsp;  Sandcastle</span><hr class="dashed">
+	</div>
+	</div>
+	
+	<div class="row" id="dim"  >
+	<div class="col-md-6">
+	 3.&nbsp; &nbsp; bea<select id="fir"><option selected disabled>     </option><option>kh</option><option>sh</option><option>ch</option></select><span style="color:green; font-weight:bold;" class="hidden">&nbsp; &nbsp;  Beach</span><hr class="dashed">
+	</div>
+	
+	<div class="col-md-6">
+	 4.&nbsp; &nbsp; pig<select id="fi"><option selected disabled>     </option><option>ui</option><option>eo</option><option>ai</option></select>n<span style="color:green; font-weight:bold;" class="hidden">&nbsp; &nbsp;  Pigeon</span><hr class="dashed">
+	</div>
+	</div>
+	
+	<div class="row" >
+	<div class="col-md-4">
+	<center><button class="block"   onclick="ho()"><span>Reset </span></button></center>
+	</div>
+	
+	<div class="col-md-4">
+	<center><button class="block" id="ss" onclick="go()" ><span>Submit </span></button></center>
+	</div>
+
+	<div class="col-md-4">
+	<center><button class="block" onclick="show()"><span>Answer Key </span></button></center>
+	</div>
+	</div>
+</div>
+</div>
+
+<br><br><br>
+
+<div class="tab4 hidden">
+	<img src="../../../../english/Welldone.gif" width="100%" height="auto">
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+<script>
+
+function go() {
+ var a1 = document.getElementById("first");
+ var a2 = document.getElementById("firs");
+ var a3 = document.getElementById("fir");
+ var a4 = document.getElementById("fi");
+ var a5 = document.getElementById("f");
+
+
+var ans1 = a1.options[a1.selectedIndex].text;
+var ans2 = a2.options[a2.selectedIndex].text;
+var ans3= a3.options[a3.selectedIndex].text;
+var ans4= a4.options[a4.selectedIndex].text;
+var ans5= a5.options[a5.selectedIndex].text;
+
+if(ans1=="as" && ans2=="an" && ans3=="ch" && ans4=="eo" && ans5=="as"){
+
+var audio = document.getElementById("audio1");
+	audio.play();
+	$('.tab1').addClass('hidden')
+	$('.tab4').removeClass('hidden')
+}
+else{
+
+var audio = document.getElementById("audio2");
+    audio.play();
+}
+}
+function ho() {
+ 
+window.location="index.html"
+}
+function show() {
+document.getElementById("ss").setAttribute("disabled", "disabled");
+$('#first').val('as');
+$('#firs').val('an');
+$('#fir').val('ch');
+$('#fi').val('eo');
+$('#f').val('as');
+
+}
+
+
+</script>
+
+</body>
+</html>

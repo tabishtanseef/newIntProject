@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+
+body{
+	background-image:url('audio/one.jpg');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+ }
+h2{
+	padding:10px;
+	text-align:center;
+	background-color: rgba(255, 234, 128, 0.6);
+	margin-top:10px;
+}
+select{
+	margin-top:10px;
+}
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #99e5ff;
+    padding: 14px 28px;
+	margin-top:10px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+	display:none;
+}
+.container{
+	background-image:url('audio/bg.jpg');
+	padding:30px;
+	border:2px solid #99e5ff;
+	box-shadow:2px 2px 2px #99e5ff;
+	border-radius:20px;
+}
+#dim{
+	margin-bottom:20px;
+	font-size:20px;
+}
+@media only screen and (max-device-width: 480px) {
+img{
+	height:auto;
+	width:100%;
+	margin-top:50px;
+}
+	}
+
+ @media only screen and (min-device-width: 481px) {
+        
+    }
+	
+</style>
+  
+  </head>
+<body>
+
+<div class="tab1">
+<h2>GRAMMAR</h2>
+<h2>Choose the correct action words to complete these sentences.</h2>
+<br>
+
+<div class="container" >		
+	<div class="row" id="dim" >
+	<div class="col-md-12"  >
+	 1.&nbsp; &nbsp; Sam <select id="first"><option selected disabled>     </option><option>got</option><option>jumped</option></select> late yesterday. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  got</span> 
+	</div>
+	</div>
+	
+	<div class="row" id="dim"  >
+	<div class="col-md-12">
+	 2.&nbsp; &nbsp; Sam <select id="firs"><option selected disabled>     </option><option>jumped</option><option>washed</option></select> out of bed. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  jumped</span> 
+	</div>
+	</div>
+	
+	<div class="row" id="dim"   >
+	<div class="col-md-12">
+	 3.&nbsp; &nbsp; He <select id="fir"><option selected disabled> </option><option>combed</option><option>washed</option></select> his face. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  washed</span> 
+	</div>
+	</div>
+	
+	<div class="row" id="dim"  >
+	<div class="col-md-12">
+	 4.&nbsp; &nbsp; He <select id="fi"><option selected disabled>     </option><option>ate</option><option>dressed</option></select> up very fast. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  dressed</span> 
+	</div>
+	</div>
+	
+	<div class="row" id="dim"  >
+	<div class="col-md-12">
+	 5.&nbsp; &nbsp; He <select id="f"><option selected disabled>     </option><option>wore</option><option>tied</option></select> his shoes. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  wore</span> 
+	</div>
+	</div>
+	
+    <div class="row" id="dim" >
+	<div class="col-md-12">
+	 6.&nbsp; &nbsp; He <select id="q"><option selected disabled>     </option><option>tied</option><option>combed</option></select> his shoelaces. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  tied</span> 
+	</div>
+	</div>
+    
+    <div class="row" id="dim"   >
+	<div class="col-md-12">
+	 7.&nbsp; &nbsp; Sam <select id="w"><option selected disabled>     </option><option>combed</option><option>picked</option></select> his hair. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  combed</span> 
+	</div>
+	</div>
+	
+    
+    <div class="row" id="dim"  >
+	<div class="col-md-12">
+	 8.&nbsp; &nbsp; He <select id="e"><option selected disabled>     </option><option>drank</option><option>ate</option></select> a toast. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  ate</span> 
+	</div>
+	</div>
+    
+	<div class="row" >
+	<div class="col-md-4">
+	<button class="block"   onclick="ho()"><span>Reset </span></button>
+	</div>
+	<div class="col-md-4">
+	<button class="block" id="ss" onClick="go()" ><span>Submit </span></button>
+	</div>
+	<div class="col-md-4">
+	<button class="block" onClick="show()"><span>Answer Key </span></button>
+	</div>
+	</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<div class="tab4 hidden">
+	<img  width="100%" height="100%" src="../../../../english/Welldone.gif">
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+<script>
+
+function ho() {
+ 
+window.location="index.html"
+}
+function show() {
+ 
+	$('span').removeClass('hidden')
+
+}
+function go() {
+ var a1 = document.getElementById("first");
+ var a2 = document.getElementById("firs");
+ var a3 = document.getElementById("fir");
+ var a4 = document.getElementById("fi");
+ var a5 = document.getElementById("f");
+ var a6 = document.getElementById("q");
+ var a7 = document.getElementById("w");
+ var a8 = document.getElementById("e");
+
+
+
+var ans1 = a1.options[a1.selectedIndex].text;
+var ans2 = a2.options[a2.selectedIndex].text;
+var ans3= a3.options[a3.selectedIndex].text;
+var ans4= a4.options[a4.selectedIndex].text;
+var ans5= a5.options[a5.selectedIndex].text;
+var ans6= a6.options[a6.selectedIndex].text;
+var ans7= a7.options[a7.selectedIndex].text;
+var ans8= a8.options[a8.selectedIndex].text;
+
+
+if(ans1=="got" && ans2=="jumped" && ans3=="washed" && ans4=="dressed" && ans5=="wore" && ans6=="tied" && ans7=="combed" && ans8=="ate"){
+
+var audio = document.getElementById("audio1");
+	audio.play();
+	$('.tab1').addClass('hidden')
+	$('.tab4').removeClass('hidden')
+}
+else{
+
+var audio = document.getElementById("audio2");
+    audio.play();
+}
+}
+
+function show() {
+$("#ss").css("pointer-events", "none");
+	$('#first').val('got');
+	$('#firs').val('jumped');
+	$('#fir').val('washed');
+	$('#fi').val('dressed');
+	$('#f').val('wore');
+	$('#q').val('tied');
+	$('#w').val('combed');
+	$('#e').val('ate');
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta http-equiv="X-Frame-Options" content="deny">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Squada+One&display=swap" rel="stylesheet">
+<style>
+
+body{
+	background-image:url('../../images/1.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	background-attachment:fixed;
+}
+div {
+	position: relative;
+	z-index: 1;
+}
+
+div .slant::before, .main {
+	border: 3px solid #57B846;
+	background: #57B846;
+}
+.slant{
+	background:#57B846;
+	color:white;
+	font-size:32px; 
+	text-align:left;
+	line-height:38px;
+	padding:15px 40px;
+	width:100%;
+	border-radius:20px  20px 0px 0px; 
+}
+.main {
+	background-color:#fff;
+	display: block;
+	margin: 0px 0 30px 0px;
+	padding: 0.5em;
+	border-corner-shape:bevel;
+	width: 100%;
+	overflow:hidden;
+	height: auto;
+	border-radius:0px 0px 20px 20px; 
+}
+.container-fluid{
+	height:20px;
+	width:90%;
+	border-radius:20px 20px 20px; 
+}
+#welldone{
+	width:80%;
+	margin-top:50%;
+}
+.icon{
+	width:50px;
+	height:50px;
+	text-align:right;
+}
+span{
+	color:#57B846;
+	font-weight:bold;
+	font-size:24px;
+}
+.content {
+	padding:25px;	
+    position:relative;
+    z-index:1;
+}
+.overlay {
+    opacity:0;
+    filter: alpha(opacity = 0);
+    position:absolute;
+    top:0; bottom:0; left:0; right:0;
+    display:block;
+    z-index:2;
+    background:transparent;
+}
+.modal-dialog-full-width {
+	width: 80% !important;
+	height: 80% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	max-width:none !important;
+}
+.modal-content-full-width  {
+	height: auto !important;
+	min-height: 100% !important;
+	border-radius: 0 !important;
+	background-color: #ececec !important 
+}
+.modal-header-full-width  {
+	border-bottom: 1px solid #9ea2a2 !important;
+}
+
+.modal-footer-full-width  {
+	border-top: 1px solid #9ea2a2 !important;
+}
+#if {
+	height:calc(80vh - 4px);
+	width:calc(80vw - 15px);
+	box-sizing: border-box;
+}
+.box-iframe{
+	margin-top:20px; 
+	width:100%; 
+	height:250px;
+}
+
+</style>
+<body><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 slant"><h2>20. A day at the farm <span style="float:right;"><a href="../../class.html"><img src="../../images/return.png" class="icon"></img></a></span></h2></div>
+		<div class="main">
+			<div class="row">
+				<div class="col-4 content" onclick="openModal('https://www.youtube.com/embed/YN3Ei2aaXps?rel=0','Topic')">
+					<center>
+					<iframe src="https://www.youtube.com/embed/YN3Ei2aaXps?rel=0" onclick="go(1)" scrolling="no" class="box-iframe"></iframe>
+					<span>Topic</span>
+					</center>
+					<div class="overlay"></div>
+				</div>
+				<div class="col-4 content" onclick="openModal('Act-1/index.html','Activity 1')" >
+					<center>
+					<iframe src="Act-1/index.html" scrolling="no" class="box-iframe"></iframe>
+					<span>Activity 1</span>
+					</center>
+					<div class="overlay"></div>
+				</div>
+				<div class="col-4 content" onclick="openModal('Act-2/index.html','Activity 2')">
+					<center>
+					<iframe src="Act-2/index.html" scrolling="no"  class="box-iframe"></iframe>
+					<span>Activity 2</span>
+					</center>
+					<div class="overlay"></div>
+				</div>
+				<div class="col-4 content" onclick="openModal('Act-3/index.html','Activity 3')">
+					<center><iframe src="Act-3/index.html" scrolling="no" class="box-iframe"></iframe>
+					<span>Activity 3</span>
+					</center>
+					<div class="overlay"></div>
+				</div>
+				<div class="col-4 content" onclick="openModal('Act-4/index.html','Activity 4')">
+					<center><iframe src="Act-4/index.html" scrolling="no"  class="box-iframe"></iframe>
+					<span>Activity 4</span>
+					</center>
+					<div class="overlay"></div>
+				</div>
+				<div class="col-4 content" onclick="openModal('../report.html','Report')">
+					<center>
+					<iframe src="../report.html" scrolling="no"  class="box-iframe"></iframe>
+					<span>Report</span>
+					</center>
+					<div class="overlay"></div>
+				</div> 
+			</div><br>
+		</div>
+	</div>
+</div>
+
+<center>
+<div class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+    <div class="modal-dialog-full-width modal-dialog momodel modal-fluid" role="document">
+        <div class="modal-content-full-width modal-content ">
+			<div class="modal-header-full-width modal-header text-center" style="width:auto;">
+                <h5 class="modal-title w-100" id="exampleModalPreviewLabel"></h5>
+                <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                    <span style="font-size: 1.3em; " aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="background-color:white; padding:0;">
+				<iframe id="if" src="" frameborder="0"  allowfullscreen=""></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+</center>
+</body>
+<script>
+	$(document).ready(function(){
+		localStorage.setItem('chapter', 'A day at the farm');
+		localStorage.setItem('ch_no', '20');
+		localStorage.setItem('C20A1_total', 4);
+		localStorage.setItem('C20A2_total', 4);
+		localStorage.setItem('C20A3_total', 4);
+		localStorage.setItem('C20A4_total', 3);
+	});
+	function openModal(a,b){
+		$('#exampleModalPreviewLabel').html(b);
+		$('#if').attr('src', a);
+		$('#exampleModalPreview').modal('show');
+	}
+</script>
+</html>

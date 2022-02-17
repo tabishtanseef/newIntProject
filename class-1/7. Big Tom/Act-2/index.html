@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+
+body{
+	background-image:url('../../../img/b1.png');
+	background-attachment:fixed;
+	background-position:cover;
+}
+.hidden{
+	display:none;
+}
+.bb{
+	background-color:#ffffff8f;
+	padding:20px;
+	margin-top:20px;
+	font-size:20px;
+	margin-bottom:20px;
+}
+h2, h4{
+	padding:20px;
+	width:90%;
+	text-align:center;
+	background-color:#ffffff8f;
+	margin-top:10px;
+}
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #ffffff;
+    padding: 14px 28px;
+    font-size: 26px;
+	margin-top:10px;
+    cursor: pointer;
+    text-align: center;
+}
+select{
+	margin-top:10px;
+}
+
+</style>
+  
+  </head>
+<body>
+<center>
+<div class="container main">
+<h2>GRAMMAR</h2>
+<h4>Choose the correct vowels to complete the naming words.</h4>
+
+<div class="row">
+	<div class="col-md-4 bb">
+	<img height="100px" src="items/ques_1.png"><br> B <select id="tab0" ><option selected disabled> </option>
+	<option>a</option>
+	<option>e</option>
+	<option>i</option>
+	<option>o</option>
+	<option>u</option></select> d 
+	</div>
+	<div class="col-md-4 bb">
+	<img height="100px" src="items/ques_2.png"><br> B <select id="tab1" ><option selected disabled>    </option>
+	<option>a</option>
+	<option>e</option>
+	<option>i</option>
+	<option>o</option>
+	<option>u</option></select> n 
+	</div>
+	<div class="col-md-4 bb">
+	<img height="100px" src="items/ques_3.png"><br> D <select id="tab2" ><option selected disabled>    </option>
+	<option>a</option>
+	<option>e</option>
+	<option>i</option>
+	<option>o</option>
+	<option>u</option></select> g 
+	</div>
+	<div class="col-md-4 bb">
+	<img height="100px" src="items/ques_4.png"><br> P <select id="tab3" ><option selected disabled>    </option>
+	<option>a</option>
+	<option>e</option>
+	<option>i</option>
+	<option>o</option>
+	<option>u</option></select> n 
+	</div>
+	<div class="col-md-4 bb">
+	<img height="100px" src="items/ques_5.png"><br> M <select id="tab4" ><option selected disabled>    </option>
+	<option>a</option>
+	<option>e</option>
+	<option>i</option>
+	<option>o</option>
+	<option>u</option></select> n 
+	</div>
+	<div class="col-md-4 bb">
+	<img height="100px" src="items/ques_6.png"><br> H <select id="tab5" ><option selected disabled>    </option>
+	<option>a</option>
+	<option>e</option>
+	<option>i</option>
+	<option>o</option>
+	<option>u</option></select> n 
+	</div>
+	
+</div>
+	<div class="row" >
+	<div class="col-md-4">
+	<button class="block" onclick="location.reload()"><span>Reset </span></button>
+	</div>
+	
+	<div class="col-md-4">
+	<button class="block" id="submit" onclick="check()" ><span>Submit </span></button>
+	</div>
+
+	<div class="col-md-4">
+	<button class="block" id="sol" onclick="solve()"><span>Answer Key </span></button>
+	</div>
+	</div>
+</div>
+<br><br>
+<div class="well hidden" >
+	<center> <img height="auto" width="100%" src="../../../../english/Welldone.gif"></center>
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+</center>
+
+<script>
+const answers = ['e','i','o','e','a','e'];
+
+window.onload = function(e){ 
+	$("#sol").css("pointer-events", "none");
+}
+
+function solve() {
+	$('#submit').attr('disabled',true);
+	$("select").css("color","green");
+	$("select").css("border","1px solid green");
+	
+	let size = answers.length;
+	console.log(size);
+	var i=0;
+	while(i<size){
+		$('#tab'+i).val(answers[i]).change();
+		i++;
+		console.log(size);
+	}
+}
+
+function check() {
+	var C7A2_error = 0;
+	var C7A2_score = 0;
+	var C7A2_submit = 0;
+	$('select').css('border','1px solid');
+	$("#sol").css("pointer-events", "auto");	
+	let size = answers.length;
+	var i=0;
+	var empty=0;	
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		console.log(input_answer);
+		if(input_answer=='' || input_answer==null){
+			empty++;
+		}
+		i++;
+	}
+	if(empty==size){
+		$("#sol").css("pointer-events", "none");
+	}
+	var i=0;
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer!=answers[i]){
+			$('#tab'+i).css("border",'2px solid red');
+			C7A2_error++;
+			localStorage.setItem('C7A2_error', C7A2_error);
+		}
+		i++;
+	}
+	
+	var i=0;
+	var correct=0;
+	while(i<size){
+		input_answer = $("#tab"+i).val();
+		if(input_answer==answers[i]){
+			correct++;
+			C7A2_score++;
+			localStorage.setItem('C7A2_score', C7A2_score);
+		}
+		i++;
+	}
+	if(correct==size){
+		setTimeout(function(){
+			C7A2_submit++;
+			localStorage.setItem('C7A2_submit', C7A2_submit);
+			var audio = document.getElementById("audio1");
+			audio.play();
+			$('.main').addClass('hidden');
+			$('.well').removeClass('hidden');
+		},1000);
+		
+	}else{
+		var audio = document.getElementById("audio2");
+		audio.play();
+	}
+}
+
+
+
+</script>
+
+</body>
+</html>

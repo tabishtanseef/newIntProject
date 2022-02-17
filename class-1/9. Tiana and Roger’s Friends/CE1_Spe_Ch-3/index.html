@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<style>
+
+body{
+	background-image:url('audio/bg.jpg');
+	background-attachment:fixed;
+	background-position:cover;
+}
+h2{
+	padding:10px;
+	text-align:center;
+	background-color:#FBBC00;
+	margin-top:10px;
+}
+select{
+	margin-top:10px;
+}
+.block {
+    display: block;
+    width: 70%;
+    border: none;
+    background-color: #89B85D;
+    padding: 12px 28px;
+    font-size: 22px;
+	margin:10px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+	display:none;
+}
+#dim{
+	margin-top:10px;
+	font-size:20px;
+}
+.sr{
+	padding:20px; 
+	margin-top:10px;
+	border:2px solid;
+	border-radius:20px;
+	background: rgb(238,160,2);
+	background: linear-gradient(205deg, rgba(238,160,2,1) 4%, rgba(255,196,0,1) 88%, rgba(215,255,0,1) 100%);
+}
+#tt{
+	margin-top:30px;
+}
+@media only screen and (max-device-width: 480px) {
+video{
+	width:100%;
+}
+#dim{
+	padding:0px;
+	text-align:left;
+	width:100%;
+	font-size:24px;
+	margin-top:10px;
+}
+	}
+
+ @media only screen and (min-device-width: 481px) {
+
+    }
+
+</style>
+  
+  </head>
+<body>
+
+<div class="tab1">
+<h2>SPELLING</h2>
+
+<h2 style="margin-top: 10px; font-size: 26px; ">Choose the correct letters to complete the words.</h2>
+
+<br>
+
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+	<center><video width="50%" controls allow="autoplay" src="ch.mp4" id="tt"></video></center>
+</div>
+</div>
+</div>
+
+<div class="container sr hidden" >	
+	<div class="row">
+		
+		<div class="col-md-1"></div>
+		<div class="col-md-5">
+			<div class="row" id="dim">
+			<div class="col-md-12"  >
+			1.&nbsp; &nbsp; Fr <select id="first"><option selected disabled>     </option><option>i</option><option>e</option><option>d</option></select> end <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  Friend</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"  >
+			<div class="col-md-12">
+			2.&nbsp; &nbsp; Sch <select id="firs"><option selected disabled>     </option><option>c</option><option>o</option><option>l</option></select> ol<span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  School</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"   >
+			<div class="col-md-12">
+			3.&nbsp; &nbsp; Sm <select id="fir"><option selected disabled>     </option><option>o</option><option>l</option><option>i</option></select> le<span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  Smile</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"   >
+			<div class="col-md-12">
+			4.&nbsp; &nbsp; Curl <select id="fi"><option selected disabled>     </option><option>l</option><option>y</option><option>e</option></select> <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  Curly</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"   >
+			<div class="col-md-12">
+			5.&nbsp; &nbsp; H <select id="f"><option selected disabled>     </option><option>o</option><option>u</option><option>s</option></select> <select id="0"><option selected disabled>     </option><option>u</option><option>o</option><option>h</option></select> se <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  House</span><hr class="dashed">
+			</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="row" >
+	<div class="col-md-4">
+	<center><button class="block"   onclick="ho()"><span>Reset </span></button></center>
+	</div>
+	
+	<div class="col-md-4">
+	<center><button class="block" id="ss" onclick="go()" ><span>Submit </span></button></center>
+	</div>
+
+	<div class="col-md-4">
+	<center><button class="block" onclick="show()"><span>Answer Key </span></button></center>
+	</div>
+	</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<div class="tab4 hidden">
+	<img  width="100%" height="auto" src="../../../../english/Welldone.gif">
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+<script>
+
+function updateCurrentTime() 
+{
+var x = document.getElementById("tt");
+
+console.log(x.currentTime);
+
+if(x.currentTime==x.duration){
+$('.sr').removeClass('hidden')
+$('#tt').addClass('hidden')
+
+}
+
+}
+	
+window.onload = function(){ 
+	setInterval(function()
+	{
+	updateCurrentTime();
+	},1000);
+}
+
+function ho() {
+ 
+window.location="index.html"
+}
+function go() {
+ var a1 = document.getElementById("first");
+ var a2 = document.getElementById("firs");
+ var a3 = document.getElementById("fir");
+ var a4 = document.getElementById("fi");
+ var a5 = document.getElementById("f");
+ var a6 = document.getElementById("0");
+
+
+var ans1 = a1.options[a1.selectedIndex].text;
+var ans2 = a2.options[a2.selectedIndex].text;
+var ans3= a3.options[a3.selectedIndex].text;
+var ans4= a4.options[a4.selectedIndex].text;
+var ans5= a5.options[a5.selectedIndex].text;
+var ans6= a6.options[a6.selectedIndex].text;
+
+if(ans1=="i" && ans2=="o" && ans3=="i" && ans4=="y" && ans5=="o" && ans6=="u"){
+
+var audio = document.getElementById("audio1");
+	audio.play();
+	$('.tab1').addClass('hidden')
+	$('.tab4').removeClass('hidden')
+}
+else{
+
+var audio = document.getElementById("audio2");
+    audio.play();
+}
+}
+
+function show() {
+$("#ss").css("pointer-events", "none");
+$("#first").val('i');
+$('#firs').val('o');
+$('#fir').val('i');
+$('#fi').val('y');
+$('#f').val('o');
+$('#0').val('u');
+}
+
+
+</script>
+
+</body>
+</html>

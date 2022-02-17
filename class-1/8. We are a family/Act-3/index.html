@@ -1,0 +1,524 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<style>
+
+body {
+	background-color:#5EB8FF;
+	background-attachment:fixed;
+	background-position:cover;
+}
+.responsive {
+	width:40%;
+	margin-bottom:15px;
+}
+h2{
+	padding:10px;
+	text-align:center;
+	background-color:#FBBC00;
+	margin-top:10px;
+}
+.block {
+    display: block;
+    width: 70%;
+    border: none;
+    background-color: #89B85D;
+    padding: 12px 28px;
+    font-size: 22px;
+	margin:10px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+	display:none;
+}
+.sr{
+	padding:20px; 
+	margin-top:10px;
+	border:2px solid;
+	border-radius:20px;
+	background: rgb(238,160,2);
+	background: linear-gradient(205deg, rgba(238,160,2,1) 4%, rgba(255,196,0,1) 88%, rgba(215,255,0,1) 100%);
+}
+#tt{
+	margin-top:50px;
+}
+img{
+	margin-top:10px;
+}
+@media only screen and (max-device-width: 480px) {
+video{
+	width:100%;
+}
+.responsive{
+	width:100%;
+	margin-bottom:15px;
+}
+#dim{
+	padding:0px;
+	text-align:left;
+	width:100%;
+	font-size:24px;
+	margin-top:10px;
+}
+	}
+
+ @media only screen and (min-device-width: 481px) {
+
+    }
+	
+</style>
+  
+  </head>
+<body>
+
+<center>
+<div class="srk">
+<h2>SPELLING</h2>
+
+<h2>Choose the correct words to name the pictures.</h2>
+
+<br>
+
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+	<center><video width="50%" height="300px" controls allow="autoplay" src="ch.mp4" id="tt"></video></center>
+</div>
+</div>
+</div>
+
+<div class="container sr hidden">
+	<div class="row">
+		
+		<div class="col-md-12">
+			<div class="tab1">
+			<div class="container">
+				<div class="row" >
+				<div class="col-md-12">
+				<img class="responsive" src="items/mother.png">
+				</div>
+				</div>
+				<div class="row" id="dim" >
+				<div class="col-md-12">
+				<center><button  class="block" id="correct1" onclick="correct1()">mother</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong1" onclick="wrong1()">father</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button class="block" id="wrong2" onclick="wrong2()">grandmother</button></center>
+				</div>
+				</div>
+			</div>
+			</div>
+
+			<div class="extra">
+			<div class="tab2 hidden">
+			<div class="container">
+				<div class="row" >
+				<div class="col-md-12">
+				<img class="responsive" src="items/grandfather.png">
+				</div>
+				</div>
+				<div class="row" id="dim" >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong3" onclick="wrong3()">grandmother</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="correct2" onclick="correct2()">grandfather</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong4" onclick="wrong4()">father</button></center>
+				</div>
+				</div>
+			</div>
+			</div>
+			</div>
+
+			<div class="extra2">
+			<div class="tab3 hidden">
+			<div class="container">
+				<div class="row" >
+				<div class="col-md-12">
+				<img class="responsive" src="items/brother.png">
+				</div>
+				</div>
+				<div class="row" id="dim" >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong6" onclick="wrong6()">mother</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong5" onclick="wrong5()">father</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="correct3" onclick="correct3()">brother</button></center>
+				</div>
+				</div>
+			</div>
+			</div>
+			</div>
+
+			<div class="extra3">
+			<div class="tab4 hidden">
+			<div class="container">
+				<div class="row" >
+				<div class="col-md-12">
+				<img class="responsive" src="items/sister.png">
+				</div>
+				</div>
+				<div class="row" id="dim" >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong7" onclick="wrong7()">grandmother</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="correct4" onclick="correct4()">sister</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong8" onclick="wrong8()">mother</button></center>
+				</div>
+				</div>
+			</div>
+			</div>
+			</div>
+
+			<div class="extra4">
+			<div class="tab5 hidden">
+			<div class="container">
+				<div class="row" >
+				<div class="col-md-12">
+				<img class="responsive" src="items/father.png">
+				</div>
+				</div>
+				<div class="row" id="dim" >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong9" onclick="wrong9()">grandfather</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="correct5" onclick="correct5()">father</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong10" onclick="wrong10()">mother</button></center>
+				</div>
+				</div>
+			</div>
+			</div>
+			</div>
+
+			<div class="extra5">
+			<div class="tab6 hidden">
+			<div class="container">
+				<div class="row" >
+				<div class="col-md-12">
+				<img class="responsive" src="items/grandmother.png">
+				</div>
+				</div>
+				<div class="row" id="dim" >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong11" onclick="wrong11()">sister</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="correct6" onclick="correct6()">grandmother</button></center>
+				</div>
+				</div>
+				<div class="row" id="dim"  >
+				<div class="col-md-12">
+				<center><button  class="block" id="wrong12" onclick="wrong12()">mother</button></center>
+				</div>
+				</div>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<br><br><br>
+
+<div class="tab7 hidden">
+
+	<img  width="100%" height="auto" src="../../../../english/Welldone.gif">
+
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+</center>
+
+<script>
+
+function updateCurrentTime() 
+{
+var x = document.getElementById("tt");
+
+console.log(x.currentTime);
+
+if(x.currentTime==x.duration){
+$('.sr').removeClass('hidden')
+$('#tt').addClass('hidden')
+
+}
+
+}
+	
+window.onload = function(){ 
+	setInterval(function()
+	{
+	updateCurrentTime();
+	},1000);
+}
+
+function correct1() {
+ var a1 = document.getElementById("correct1");
+ var a2 = document.getElementById("wrong1");
+ var a3 = document.getElementById("wrong2");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio1");
+    audio.play();
+setInterval(function(){ 
+	$('.tab1').addClass('hidden')
+	$('.tab2').removeClass('hidden')},2000);
+}
+
+function wrong1() {
+ var a1 = document.getElementById("correct1");
+ var a2 = document.getElementById("wrong1");
+ var a3 = document.getElementById("wrong2");
+ a1.style.backgroundColor = "#89B85D"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong2() {
+ var a1 = document.getElementById("correct1");
+ var a2 = document.getElementById("wrong1");
+ var a3 = document.getElementById("wrong2");
+ a1.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct2() {
+ var a1 = document.getElementById("correct2");
+ var a2 = document.getElementById("wrong3");
+ var a3 = document.getElementById("wrong4");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio1");
+    audio.play();
+setInterval(function(){ 
+	$('.extra').addClass('hidden')
+	$('.tab3').removeClass('hidden')},2000);
+}
+
+function wrong3() {
+ var a1 = document.getElementById("correct2");
+ var a2 = document.getElementById("wrong3");
+ var a3 = document.getElementById("wrong4");
+ a1.style.backgroundColor = "#89B85D"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong4() {
+ var a1 = document.getElementById("correct2");
+ var a2 = document.getElementById("wrong3");
+ var a3 = document.getElementById("wrong4");
+ a1.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct3() {
+ var a1 = document.getElementById("correct3");
+ var a2 = document.getElementById("wrong5");
+ var a3 = document.getElementById("wrong6");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio1");
+    audio.play();
+setInterval(function(){ 
+	$('.extra2').addClass('hidden')
+	$('.tab4').removeClass('hidden')},2000);
+}
+
+function wrong5() {
+ var a1 = document.getElementById("correct3");
+ var a2 = document.getElementById("wrong5");
+ var a3 = document.getElementById("wrong6");
+ a1.style.backgroundColor = "#89B85D"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong6() {
+ var a1 = document.getElementById("correct3");
+ var a2 = document.getElementById("wrong5");
+ var a3 = document.getElementById("wrong6");
+ a1.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct4() {
+ var a1 = document.getElementById("correct4");
+ var a2 = document.getElementById("wrong7");
+ var a3 = document.getElementById("wrong8");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio1");
+    audio.play();
+setInterval(function(){ 
+	$('.extra3').addClass('hidden')
+	$('.tab5').removeClass('hidden')},2000);
+}
+
+function wrong7() {
+ var a1 = document.getElementById("correct4");
+ var a2 = document.getElementById("wrong7");
+ var a3 = document.getElementById("wrong8");
+ a1.style.backgroundColor = "#89B85D"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong8() {
+ var a1 = document.getElementById("correct4");
+ var a2 = document.getElementById("wrong7");
+ var a3 = document.getElementById("wrong8");
+ a1.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct5() {
+ var a1 = document.getElementById("correct5");
+ var a2 = document.getElementById("wrong9");
+ var a3 = document.getElementById("wrong10");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio1");
+    audio.play();
+setInterval(function(){ 
+	$('.extra4').addClass('hidden')
+	$('.tab6').removeClass('hidden')},2000);
+}
+
+function wrong9() {
+ var a1 = document.getElementById("correct5");
+ var a2 = document.getElementById("wrong9");
+ var a3 = document.getElementById("wrong10");
+ a1.style.backgroundColor = "#89B85D"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong10() {
+ var a1 = document.getElementById("correct5");
+ var a2 = document.getElementById("wrong9");
+ var a3 = document.getElementById("wrong10");
+ a1.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct6() {
+ var a1 = document.getElementById("correct6");
+ var a2 = document.getElementById("wrong11");
+ var a3 = document.getElementById("wrong12");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio1");
+    audio.play();
+setInterval(function(){ 
+	$('.container').addClass('hidden')
+	$('h2').addClass('hidden')
+	$('.srk').addClass('hidden')
+	$('.tab7').removeClass('hidden')},2000);
+}
+
+function wrong11() {
+ var a1 = document.getElementById("correct6");
+ var a2 = document.getElementById("wrong11");
+ var a3 = document.getElementById("wrong12");
+ a1.style.backgroundColor = "#89B85D"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong12() {
+ var a1 = document.getElementById("correct6");
+ var a2 = document.getElementById("wrong11");
+ var a3 = document.getElementById("wrong12");
+ a1.style.backgroundColor = "#89B85D"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#89B85D"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+</script>
+
+</body>
+</html>

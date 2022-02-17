@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+
+body{
+	background-color:#FED9A9;
+	background-attachment:fixed;
+	background-position:cover;
+}
+h2{
+	padding:10px;
+	width:90%;
+	margin-top:10px;
+	text-align:center;
+	border:2px solid #ef7cc7;
+	border-radius:20px;
+	padding:20px;
+	background-image: linear-gradient(#f9c5e7, #ef7cc7);
+}
+h3{
+	margin-top:20px;
+	width:80%;
+	border:2px solid #ef7cc7;
+	border-radius:20px;
+	padding:40px;
+	background-image: linear-gradient(#f9c5e7, #ef7cc7);
+	padding:10px;
+	font-weight:bold;
+}
+.block {
+    display: block;
+    width: 70%;
+    border: none;
+    background-color: #ffffff8f;
+    padding: 12px 28px;
+	margin-top:10px;
+    font-size: 22px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+	display:none;
+}
+select{
+	margin-top:10px;
+	font-size:20px;
+}
+.container{
+	border:2px solid #ef7cc7;
+	width:90% ;
+	border-radius:20px;
+	padding:40px;
+	background-image: linear-gradient(#f9c5e7, #ef7cc7);
+}
+.col-md-4{
+	margin-top:25px;
+}
+
+</style>
+  
+  </head>
+<body>
+
+<div class="tabish">
+<center>
+<h2>VOCABULARY</h2>
+<h3>Choose the correct options to name the pictures.</h3>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4"><img width="80%" src="items/1.png"><br><select id="a1"></select><hr></div>
+		<div class="col-md-4"><img width="80%" src="items/2.png"><br><select id="a2"></select><hr></div>
+		<div class="col-md-4"><img width="80%" src="items/3.png"><br><select id="a3"></select><hr></div>
+		<div class="col-md-4"><img width="80%" src="items/4.png"><br><select id="a4"></select><hr></div>
+		<div class="col-md-4"><img width="80%" src="items/5.png"><br><select id="a5"></select><hr></div>
+		<div class="col-md-4"><img width="80%" src="items/6.png"><br><select id="a6"></select><hr></div>
+	</div>
+	
+	<div class="row"   >
+	<div class="col-md-4">
+	<center><button class="block" onclick="window.location.reload()">Reset</button></center>
+	</div>
+	<div class="col-md-4">
+	<center><button class="block" id="submit" onclick="check()">Submit</button></center>
+	</div>
+	<div class="col-md-4">
+	<center><button class="block" onclick="solve()">Solution</button>	</center>
+	</div>
+	</div>
+</div>
+
+</center>
+
+</div>
+
+<br><br><br>
+
+<div class="tan hidden">
+	<img src="../../../../english/Welldone.gif" width="100%" height="auto">
+</div>
+	
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+<script>
+
+function check() {
+ var a1 = document.getElementById("a1");
+ var a2 = document.getElementById("a2");
+ var a3 = document.getElementById("a3");
+ var a4 = document.getElementById("a4"); 
+ var a5 = document.getElementById("a5");
+ var a6 = document.getElementById("a6");
+ 
+var ans1= a1.options[a1.selectedIndex].text;
+var ans2= a2.options[a2.selectedIndex].text;
+var ans3= a3.options[a3.selectedIndex].text;
+var ans4= a4.options[a4.selectedIndex].text; 
+var ans5= a5.options[a5.selectedIndex].text;
+var ans6= a6.options[a6.selectedIndex].text;
+
+
+if(ans1!="Apple"){
+	$('#a1').css("border",'2px solid red');
+}
+if(ans2!="Ruler"){
+	$('#a2').css("border",'2px solid red');
+}
+if(ans3!="Pencil"){
+	$('#a3').css("border",'2px solid red');
+}
+if(ans4!="Bun"){
+	$('#a4').css("border",'2px solid red');
+}
+if(ans5!="Eraser"){
+	$('#a5').css("border",'2px solid red');
+}
+if(ans6!="Book"){
+	$('#a6').css("border",'2px solid red');
+}
+ 
+
+if(ans1=="Apple" && ans2=="Ruler" && ans3=="Pencil" && ans4=="Bun" && ans5=="Eraser" && ans6=="Book" ){
+ var audio = document.getElementById("audio1");
+	audio.play();
+	setInterval(function(){ $('.tab1').addClass('hidden')
+	$('h2').addClass('hidden')
+	$('h3').addClass('hidden')
+	$('.tab10').removeClass('hidden')},1000);
+} 
+else{
+	var audio = document.getElementById("audio2");
+	audio.play();
+}    
+}
+window.onload = function(e){ 
+    $('#a1').append("<option selected disabled>     </option><option>Pencil</option><option>Book</option><option>Eraser</option><option>Bun</option><option>Ruler</option><option>Apple</option>");
+    $('#a2').append("<option selected disabled>     </option><option>Pencil</option><option>Book</option><option>Eraser</option><option>Bun</option><option>Ruler</option><option>Apple</option>");
+    $('#a3').append("<option selected disabled>     </option><option>Pencil</option><option>Book</option><option>Eraser</option><option>Bun</option><option>Ruler</option><option>Apple</option>");
+    $('#a4').append("<option selected disabled>     </option><option>Pencil</option><option>Book</option><option>Eraser</option><option>Bun</option><option>Ruler</option><option>Apple</option>");
+    $('#a5').append("<option selected disabled>     </option><option>Pencil</option><option>Book</option><option>Eraser</option><option>Bun</option><option>Ruler</option><option>Apple</option>");
+    $('#a6').append("<option selected disabled>     </option><option>Pencil</option><option>Book</option><option>Eraser</option><option>Bun</option><option>Ruler</option><option>Apple</option>");
+}
+function solve() {
+document.getElementById("submit").setAttribute("disabled", "disabled");
+	$('#a1').val('Apple');
+	$('#a2').val('Ruler');
+	$('#a3').val('Pencil');
+	$('#a4').val('Bun');
+	$('#a5').val('Eraser');
+	$('#a6').val('Book');
+}
+</script>
+
+</body>
+</html>

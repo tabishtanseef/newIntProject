@@ -1,0 +1,551 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style>
+
+body{
+	background-image: url(items/bg.jpg);
+	background-attachment:fixed;
+	background-position:cover;
+}
+h2, h4{
+	padding:10px;
+	text-align:center;
+	background: linear-gradient(#FFEADC, #9198e5);
+	margin-top:10px;
+}
+#dim{
+	margin-top:10px;
+}
+.block {
+   display: block;
+    width: 60%;
+    border: none;
+    background-color: #ffffff8f;
+    padding: 14px 28px;
+    font-size: 26px;
+    cursor: pointer;
+    text-align: center;
+}
+.hidden{
+	display:none;
+}
+.tt{
+	padding:20px; 
+	margin-top:10px;
+	border:2px solid;
+	border-radius:20px;
+	background: rgb(238,160,2);
+	background: linear-gradient(205deg, rgba(238,160,2,1) 4%, rgba(255,196,0,1) 88%, rgba(215,255,0,1) 100%);
+}
+#tt{
+	margin-top:50px;
+}
+img{
+	margin-top:10px;
+}
+@media only screen and (max-device-width: 480px) {
+video{
+	width:100%;
+}
+img{
+	height:auto;
+	width:90%;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+h2{
+	margin-top:20px;
+	font-size:20px;
+}
+    }
+
+@media only screen and (min-device-width: 481px) {
+       
+    }
+
+</style>
+</head>
+<body>
+<center>
+<div class="shah">
+<h2>GRAMMAR</h2>
+<h4>Look at the pictures. Choose the correct describing words for them.</h4>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+	<center><video width="50%" controls allow="autoplay" src="audio/ch.mp4" id="tt"></video></center>
+</div>
+</div>
+</div>
+<div class="container tt hidden">
+	
+	<div class="tab1">
+	<div class="container">
+		<div class="row" >
+		<div class="col-md-12">
+		<img width="40%" src="items/sam.jpg">
+		<br>
+		<div class="cor1" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive"> Sam is ______.</div>
+		<div class="wor1 hidden" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive"> Sam is <span style="color:red;"> tall</span>.</div>
+		<br>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<button type="button" class="block" id="wrong1" onclick="wrong1()">sad</button>
+		</div>
+		</div>
+		<div class="row" id="dim" >
+		<div class="col-md-12">
+		<button type="button" class="block" id="correct1" onclick="correct1()">tall</button>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<button type="button" class="block" id="wrong2" onClick="wrong2()">pretty</button>
+		<br>
+		</div>
+		</div>
+	</div>
+	</div>
+
+
+	<div class="extra">
+	<div class="tab2 hidden">
+	<div class="container">
+		<div class="row" >
+		<div class="col-md-12">
+		<img width="40%" src="items/lady.jpg">
+		<br>
+		<div class="cor2"  style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive">The lady is ______.</div>
+		<div class="wor2 hidden" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive">The lady is <span style="color:red;"> pretty</span>.</div>
+		<br>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<button type="button" class="block" id="wrong3" onclick="wrong3()">bad</button>
+		</div>
+		</div>
+		<div class="row" id="dim" >
+		<div class="col-md-12">
+		<button type="button" class="block" id="wrong4" onClick="wrong4()">sad</button>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<button type="button" class="block" id="correct2" onclick="correct2()">pretty</button>
+		<br>
+		</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<div class="extra2">
+	<div class="tab3 hidden">
+	<div class="container">
+		<div class="row" >
+		<div class="col-md-12">
+		<img width="40%" src="items/riya.jpg">
+		<br>
+		<div class="cor3" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive">Riya has ______ hair.</div>
+		<div class="wor3 hidden" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive">Riya has <span style="color:red;"> long </span>hair.</div>
+		<br>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<button type="button" class="block" id="wrong6" onClick="wrong6()">curly</button>
+		</div>
+		</div>
+		<div class="row" id="dim" >
+		<div class="col-md-12">
+		<button type="button" class="block" id="correct3" onClick="correct3()">long</button>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<button type="button" class="block" id="wrong5" onClick="wrong5()">tall</button>
+		<br>
+		</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<div class="extra3">
+	<div class="tab4 hidden">
+	<div class="container">
+		<div class="row" >
+		<div class="col-md-12">
+		<img width="40%" src="items/amir.jpg">
+		<br>
+		<div class="cor4" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive">Amir has ______ hair.</div>
+		<div class="wor4 hidden" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive">Amir has <span style="color:red;"> curly </span>hair.</div>
+		<br>
+		</div>
+		</div>
+		<div class="row" id="dim" >
+		<div class="col-md-12">
+		<button type="button" class="block" id="correct4" onClick="correct4()">curly</button>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<button type="button" class="block" id="wrong8" onClick="wrong8()">pretty</button>
+		</div>
+		</div>	
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<button type="button" class="block" id="wrong7" onClick="wrong7()">long</button>
+		<br>
+		</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<div class="extra4">
+	<div class="tab5 hidden">
+	<div class="container">
+		<div class="row" >
+		<div class="col-md-12">
+		<img width="40%" src="items/jagjit.jpg">
+		<br>
+		<div class="cor5" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive;">Jagjit is ______.</div>
+		<div class="wor5 hidden" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive;">Jagjit is <span style="color:red;"> happy</span>.</div>
+		<br>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<td><button type="button" class="block" id="wrong9" onClick="wrong9()">long</button></td>
+		</div>
+		</div>
+		<div class="row" id="dim" >
+		<div class="col-md-12">
+		<button type="button" class="block" id="correct5" onClick="correct5()">happy</button>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<td><button type="button" class="block" id="wrong10" onClick="wrong10()">pretty</button></td>
+		<br>
+		</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<div class="extra5">
+	<div class="tab6 hidden">
+	<div class="container">
+		<div class="row" >
+		<div class="col-md-12">
+		<img width="40%" src="items/ball.jpg">
+		<br>
+		<div class="cor6" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive">The ball is ______.</div>
+		<div class="wor6 hidden" style="font-size:25px; font-family:Comic Sans, Comic Sans MS, cursive">The ball is <span style="color:red;"> round</span>.</div>
+		<br>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<button type="button" class="block" id="correct6" onClick="correct6()">round</button>
+		</div>
+		</div>
+		<div class="row" id="dim" >
+		<div class="col-md-12">
+		<button type="button" class="block" id="wrong11" onClick="wrong11()">long</button>
+		</div>
+		</div>
+		<div class="row" id="dim"  >
+		<div class="col-md-12">
+		<button type="button" class="block" id="wrong12" onClick="wrong12()">tall</button>
+		<br>
+		</div>
+		</div>
+	</div>
+	</div>
+	</div>
+</div>
+</div>
+
+<br><br><br>
+
+<div class="tab7 hidden">
+	<img src="../../../../english/Welldone.gif" width="100%" height="auto">
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+</center>
+
+<script>
+
+function updateCurrentTime() 
+{
+var x = document.getElementById("tt");
+
+console.log(x.currentTime);
+
+if(x.currentTime==x.duration){
+$('.tt').removeClass('hidden')
+$('#tt').addClass('hidden')
+
+}
+
+}
+
+	
+window.onload = function(){ 
+	setInterval(function()
+	{
+		updateCurrentTime();
+	},1000);
+}
+
+function correct1() {
+ var a1 = document.getElementById("correct1");
+ var a2 = document.getElementById("wrong1");
+ var a3 = document.getElementById("wrong2");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor1').addClass('hidden')
+	$('.wor1').removeClass('hidden')
+setInterval(function(){ 
+	$('.tab1').addClass('hidden')
+	$('.tab2').removeClass('hidden')},2000);
+}
+
+function wrong1() {
+ var a1 = document.getElementById("correct1");
+ var a2 = document.getElementById("wrong1");
+ var a3 = document.getElementById("wrong2");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong2() {
+ var a1 = document.getElementById("correct1");
+ var a2 = document.getElementById("wrong1");
+ var a3 = document.getElementById("wrong2");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct2() {
+ var a1 = document.getElementById("correct2");
+ var a2 = document.getElementById("wrong3");
+ var a3 = document.getElementById("wrong4");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor2').addClass('hidden')
+	$('.wor2').removeClass('hidden')
+setInterval(function(){ 
+	$('.extra').addClass('hidden')
+	$('.tab3').removeClass('hidden')},2000);
+}
+
+function wrong3() {
+ var a1 = document.getElementById("correct2");
+ var a2 = document.getElementById("wrong3");
+ var a3 = document.getElementById("wrong4");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong4() {
+ var a1 = document.getElementById("correct2");
+ var a2 = document.getElementById("wrong3");
+ var a3 = document.getElementById("wrong4");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct3() {
+ var a1 = document.getElementById("correct3");
+ var a2 = document.getElementById("wrong5");
+ var a3 = document.getElementById("wrong6");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor3').addClass('hidden')
+	$('.wor3').removeClass('hidden')
+setInterval(function(){ 
+	$('.extra2').addClass('hidden')
+	$('.tab4').removeClass('hidden')},2000);
+}
+
+function wrong5() {
+ var a1 = document.getElementById("correct3");
+ var a2 = document.getElementById("wrong5");
+ var a3 = document.getElementById("wrong6");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong6() {
+ var a1 = document.getElementById("correct3");
+ var a2 = document.getElementById("wrong5");
+ var a3 = document.getElementById("wrong6");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct4() {
+ var a1 = document.getElementById("correct4");
+ var a2 = document.getElementById("wrong7");
+ var a3 = document.getElementById("wrong8");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor4').addClass('hidden')
+	$('.wor4').removeClass('hidden')
+setInterval(function(){ 
+	$('.extra3').addClass('hidden')
+	$('.tab5').removeClass('hidden')},2000);
+}
+
+function wrong7() {
+ var a1 = document.getElementById("correct4");
+ var a2 = document.getElementById("wrong7");
+ var a3 = document.getElementById("wrong8");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong8() {
+ var a1 = document.getElementById("correct4");
+ var a2 = document.getElementById("wrong7");
+ var a3 = document.getElementById("wrong8");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function correct5() {
+ var a1 = document.getElementById("correct5");
+ var a2 = document.getElementById("wrong9");
+ var a3 = document.getElementById("wrong10");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor5').addClass('hidden')
+	$('.wor5').removeClass('hidden')
+setInterval(function(){ 
+	$('.extra4').addClass('hidden')
+	$('.tab6').removeClass('hidden')},2000);
+}
+
+function wrong9() {
+ var a1 = document.getElementById("correct5");
+ var a2 = document.getElementById("wrong9");
+ var a3 = document.getElementById("wrong10");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+
+function wrong10() {
+ var a1 = document.getElementById("correct5");
+ var a2 = document.getElementById("wrong9");
+ var a3 = document.getElementById("wrong10");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+} 
+
+
+function correct6() {
+ var a1 = document.getElementById("correct6");
+ var a2 = document.getElementById("wrong11");
+ var a3 = document.getElementById("wrong12");
+ a1.style.backgroundColor = "#00FF00"
+ a2.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio1");
+	audio.play();
+	$('.cor6').addClass('hidden')
+	$('.wor6').removeClass('hidden')
+setInterval(function(){ 
+	$('h2').addClass('hidden');
+	$('h4').addClass('hidden');
+	$('.shah').addClass('hidden');
+	$('.tab7').removeClass('hidden')},2000);
+}
+
+function wrong11() {
+ var a1 = document.getElementById("correct6");
+ var a2 = document.getElementById("wrong11");
+ var a3 = document.getElementById("wrong12");
+ a1.style.backgroundColor = "#ffffff8f"
+ a2.style.backgroundColor = "#ff0000"
+ a3.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}
+function wrong12() {
+ var a1 = document.getElementById("correct6");
+ var a2 = document.getElementById("wrong11");
+ var a3 = document.getElementById("wrong12");
+ a1.style.backgroundColor = "#ffffff8f"
+ a3.style.backgroundColor = "#ff0000"
+ a2.style.backgroundColor = "#ffffff8f"
+ var audio = document.getElementById("audio2");
+    audio.play();
+}  
+
+</script>
+
+</body>
+</html>

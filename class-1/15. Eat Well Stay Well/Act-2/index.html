@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	
+<style>
+
+body{
+	background-color:#FFEC9F;
+	background-attachment:fixed;
+	background-position:cover;
+}
+h2{
+	text-align:center;
+	padding:10px;
+	width:80%;
+	border:2px solid  #FEA500;
+	border-radius:20px;
+	background-color: rgba(255, 234, 128, 0.6);
+	margin-top:10px; font-family:Roboto, Roboto Condensed, cursive; 
+}
+h4{
+	width:80%;
+	border:2px solid  #FEA500;
+	border-radius:20px;
+	text-align:center;
+	padding:10px;
+	background-color: rgba(255, 234, 128, 0.6);
+	margin-bottom:10px;
+}
+select{
+	margin-top:10px;
+}
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color:orange;
+    padding: 14px 28px;
+    font-size: 22px;
+    cursor: pointer;
+    text-align: center;
+	margin-top:10px;
+}
+.hidden{
+	display:none;
+}
+.sr{
+	padding:30px; 
+	margin-top:10px;
+	border:2px solid #FEA500;
+	box-shadow:5px 5px 5px #FEA500;
+	border-radius:20px;
+	background-color:#ffc744;
+}
+#dim{
+	margin-top:10px;
+	font-size:24px;
+}
+@media only screen and (max-device-width: 480px) {
+video{
+	width:100%;
+}
+img{
+	height:auto;
+	width:100%;
+	margin-top:20px;
+}
+#dim{
+	padding:0px;
+	text-align:left;
+	width:100%;
+	font-size:24px;
+	margin-top:10px;
+}
+h2{
+	margin-top:20px;
+}
+	}
+
+ @media only screen and (min-device-width: 481px) {
+        
+    }
+	
+</style>
+  
+  </head>
+<body>
+
+<div class="tab1">
+<center>
+<h2>GRAMMAR</h2>
+<h4 >Choose the correct action words to complete these sentences.</h4>
+<br>
+</center>
+
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+	<center><video width="50%" controls allow="autoplay" src="ch.mp4" id="tt"></video>
+</div>
+</div>
+</div>
+
+<div class="container sr hidden" >	
+	<div class="row">
+		
+		<div class="col-md-12">
+			<div class="row" id="dim">
+			<div class="col-md-12"  >
+			 1.&nbsp; &nbsp; The boys and girls in Class I <select id="first"><option selected disabled>     </option><option>read</option><option>reads</option></select> well. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  read</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim" >
+			<div class="col-md-12">
+			 2.&nbsp; &nbsp; Tina <select id="firs"><option selected disabled>     </option><option>reads</option><option>read</option></select> well. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  reads</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"  >
+			<div class="col-md-12">
+			 3.&nbsp; &nbsp; I also <select id="fir"><option selected disabled> </option><option>read</option><option>reads</option></select> well. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  read</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"  >
+			<div class="col-md-12">
+			 4.&nbsp; &nbsp; Preeti <select id="fi"><option selected disabled>     </option><option>likes</option><option>like</option></select> a new watch. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  likes</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"  >
+			<div class="col-md-12">
+			 5.&nbsp; &nbsp; Spots <select id="f"><option selected disabled>     </option><option>run</option><option>runs</option></select> after Meow. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  runs</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"  >
+			<div class="col-md-12">
+			 6.&nbsp; &nbsp; Tina <select id="s"><option selected disabled>     </option><option>likes</option><option>like</option></select> to eat fruits and vegetables. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  likes</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"  >
+			<div class="col-md-12">
+			 7.&nbsp; &nbsp; You <select id="r"><option selected disabled>     </option><option>eats</option><option>eat</option></select> mangoes. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  eat</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"  >
+			<div class="col-md-12">
+			 8.&nbsp; &nbsp; Jagjit <select id="k"><option selected disabled>     </option><option>eat</option><option>eats</option></select> a banana every day. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  eats</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" >
+			<div class="col-md-4">
+			<button class="block"   onclick="ho()"><span>Reset </span></button>
+			</div>
+			
+			<div class="col-md-4">
+			<button class="block" id="ss" onClick="go()" ><span>Submit </span></button>
+			</div>
+
+			<div class="col-md-4">
+			<button class="block" onClick="show()"><span>Answer Key </span></button>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<br><br><br>
+
+<div class="tab4 hidden">
+	<img  width="100%" height="100%" src="../../../../english/Welldone.gif">
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+<script>
+
+function updateCurrentTime() 
+{
+var x = document.getElementById("tt");
+
+console.log(x.currentTime);
+
+if(x.currentTime==x.duration){
+$('.sr').removeClass('hidden')
+$('#tt').addClass('hidden')
+
+}
+
+}
+	
+window.onload = function(){ 
+	setInterval(function()
+	{
+		updateCurrentTime();
+	},1000);
+}
+
+function ho() {
+ 
+window.location="index.html"
+}
+function show() {
+ 
+	$('span').removeClass('hidden')
+
+}
+
+function go() {
+ var a1 = document.getElementById("first");
+ var a2 = document.getElementById("firs");
+ var a3 = document.getElementById("fir");
+ var a4 = document.getElementById("fi");
+ var a5 = document.getElementById("f");
+ var a6 = document.getElementById("s");
+ var a7 = document.getElementById("r");
+ var a8 = document.getElementById("k");
+
+
+
+var ans1 = a1.options[a1.selectedIndex].text;
+var ans2 = a2.options[a2.selectedIndex].text;
+var ans3= a3.options[a3.selectedIndex].text;
+var ans4= a4.options[a4.selectedIndex].text;
+var ans5= a5.options[a5.selectedIndex].text;
+var ans6= a6.options[a6.selectedIndex].text;
+var ans7= a7.options[a7.selectedIndex].text;
+var ans8= a8.options[a8.selectedIndex].text;
+
+
+if(ans1=="read" && ans2=="reads" && ans3=="read" && ans4=="likes" && ans5=="runs" && ans6=="likes" && ans7=="eat" && ans8=="eats"){
+
+var audio = document.getElementById("audio1");
+	audio.play();
+	$('.tab1').addClass('hidden')
+	$('.tab4').removeClass('hidden')
+}
+else{
+
+var audio = document.getElementById("audio2");
+	audio.play();
+}
+	}
+
+function show() {
+$("#ss").css("pointer-events", "none");
+	$('#first').val('read');
+	$('#firs').val('reads');
+	$('#fir').val('read');
+	$('#fi').val('likes');
+	$('#f').val('runs');
+	$('#s').val('likes');
+	$('#r').val('eat');
+	$('#k').val('eats');
+}
+</script>
+
+</body>
+</html>

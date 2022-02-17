@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	
+<style>
+
+body{
+	background-image: radial-gradient(#ffe541, #ffd314);
+	background-attachment:fixed;
+	background-position:cover;
+}
+h2{
+	width:90%;
+	border:2px solid  #FEA500;
+	border-radius:20px;
+	box-shadow:2px 2px 2px  #FEA500;
+	text-align:center;
+	padding:10px;
+	background-color: rgba(255, 234, 128, 0.6);
+	margin-top:10px; font-family:Roboto, Roboto Condensed, cursive; 
+}
+.block {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: orange;
+    padding: 14px 28px;
+    font-size: 22px;
+    cursor: pointer;
+    text-align: center;
+	margin-top:10px;
+}
+.hidden{
+	display:none;
+}
+.sr{
+	padding:20px; 
+	margin-top:10px;
+	border:2px solid #FEA500;
+	box-shadow:5px 5px 5px #FEA500;
+	border-radius:20px;
+	background-color:#ffc744;
+}
+#dim{
+	margin-top:10px;
+	font-size:20px;
+}
+@media only screen and (max-device-width: 480px) {
+video{
+	width:100%;
+}
+img{
+	height:auto;
+	width:100%;
+	margin-top:20px;
+}
+#dim{
+	padding:0px;
+	text-align:left;
+	width:100%;
+	font-size:24px;
+	margin-top:20px;
+}
+h2{
+	margin-top:20px;
+}
+	}
+@media only screen and (min-device-width: 481px) {
+        
+    }
+	
+</style>
+  
+  </head>
+<body>
+
+<div class="tab1">
+<center>
+<h2>GRAMMAR</h2>
+<h2 style="margin-top: 10px;font-size: 26px; padding:10px; ">Choose either has or have to complete these sentences. </h2>
+</center>
+<br>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+	<center><video width="50%" controls allow="autoplay" src="ch.mp4" id="tt"></video></center>
+</div>
+</div>
+</div>
+<div class="container sr hidden" style ="margin-top:10px">	
+	<div class="row">
+		
+		<div class="col-md-12">	
+
+			<div class="row" id="dim">
+			<div class="col-md-12"  >
+			 1.&nbsp; &nbsp; The teacher <select id="Aarushish"><option selected disabled>     </option><option>has</option><option>have</option></select> a black handbag. She <select id="Aarushis"><option selected disabled> </option><option>have</option><option>has</option></select> a black handbag. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  has , has</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"  >
+			<div class="col-md-12">
+			 2.&nbsp; &nbsp; We <select id="Aarushi"><option selected disabled>     </option><option>has</option><option>have</option></select> two bedrooms in our house. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  have</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"   >
+			<div class="col-md-12">
+			 3.&nbsp; &nbsp; Amir and Jagjit <select id="Aarush"><option selected disabled> </option><option>has</option><option>have</option></select> many storybooks. They <select id="Aarus"><option selected disabled> </option><option>have</option><option>has</option></select> many storybooks. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  have , have</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"   >
+			<div class="col-md-12">
+			 4.&nbsp; &nbsp; Preeti <select id="Aaru"><option selected disabled>     </option><option>has</option><option>have</option></select> a new watch. She <select id="Aar"><option selected disabled></option><option>have</option><option>has</option></select> a new watch. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  has , has</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" id="dim"   >
+			<div class="col-md-12">
+			 5.&nbsp; &nbsp; Raj <select id="Aa"><option selected disabled>     </option><option>have</option><option>has</option></select> a new cycle. He <select id="A"><option selected disabled>     </option><option>has</option><option>have</option></select> a new cycle. <span style="color:#FF0000; font-weight:bold;" class="hidden">&nbsp; &nbsp;  has , has</span><hr class="dashed">
+			</div>
+			</div>
+			
+			<div class="row" >
+			<div class="col-md-4">
+			<button class="block"   onclick="ho()"><span>Reset </span></button>
+			</div>
+			
+			<div class="col-md-4">
+			<button class="block"  id="ss" onClick="go()" ><span>Submit </span></button>
+			</div>
+
+			<div class="col-md-4">
+			<button class="block" onClick="show()"><span>Answer Key </span></button>
+			</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<br>
+<br>
+
+</div>
+
+<br><br>
+
+<div class="tab4 hidden">
+	<img  width="100%" height="100%" src="../../../../english/Welldone.gif">
+</div>
+
+<audio id="audio2" src="../../../../english/try-again.mp3"></audio>
+<audio id="audio1" src="../../../../english/well-done.mp3"></audio>
+
+<script>
+
+function updateCurrentTime() 
+{
+var x = document.getElementById("tt");
+
+console.log(x.currentTime);
+
+if(x.currentTime==x.duration){
+$('.sr').removeClass('hidden')
+$('#tt').addClass('hidden')
+
+}
+
+}
+	
+window.onload = function(){ 
+	setInterval(function()
+	{
+		updateCurrentTime();
+	},1000);
+}
+
+function ho() {
+ 
+window.location="index.html"
+
+}
+function show() {
+	
+	$('span').removeClass('hidden')
+
+}
+function go() {
+ var a1 = document.getElementById("Aarushish");
+ var a2 = document.getElementById("Aarushis");
+ var a3 = document.getElementById("Aarushi");
+ var a4 = document.getElementById("Aarush");
+ var a5 = document.getElementById("Aarus");
+ var a6 = document.getElementById("Aaru");
+ var a7 = document.getElementById("Aar");
+ var a8 = document.getElementById("Aa");
+ var a9 = document.getElementById("A");
+
+
+var ans1 = a1.options[a1.selectedIndex].text;
+var ans2 = a2.options[a2.selectedIndex].text;
+var ans3= a3.options[a3.selectedIndex].text;
+var ans4= a4.options[a4.selectedIndex].text;
+var ans5= a5.options[a5.selectedIndex].text;
+var ans6= a6.options[a6.selectedIndex].text;
+var ans7= a7.options[a7.selectedIndex].text;
+var ans8= a8.options[a8.selectedIndex].text;
+var ans9= a9.options[a9.selectedIndex].text;
+
+if(ans1=="has" && ans2=="has" && ans3=="have" && ans4=="have" && ans5=="have" && ans6=="has" && ans7=="has" && ans8=="has" && ans9=="has"){
+
+var audio = document.getElementById("audio1");
+	audio.play();
+	$('.tab1').addClass('hidden')
+	$('.tab4').removeClass('hidden')
+}
+else{
+
+var audio = document.getElementById("audio2");
+    audio.play();
+}
+}
+
+function show() {
+$("#ss").css("pointer-events", "none");
+	$('#Aarushish').val('has');
+	$('#Aarushis').val('has');
+	$('#Aarushi').val('have');
+	$('#Aarush').val('have');
+	$('#Aarus').val('have');
+	$('#Aaru').val('has');
+	$('#Aar').val('has');
+	$('#Aa').val('has');
+	$('#A').val('has');
+}
+
+</script>
+
+</body>
+</html>
